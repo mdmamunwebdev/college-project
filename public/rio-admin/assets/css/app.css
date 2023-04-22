@@ -1,0 +1,187 @@
+/* ***********************************************************************************************************
+ # Variables
+ *********************************************************************************************************** */
+
+:root {
+    --neumo-bg-color: #EBE7E6;
+    --neumo-color: #D31B27;
+
+    --box-shadow-none: 1px 1px 0px #e9e5e4,
+    -1px -1px 0px #ede9e8;
+
+    --box-shadow-primary: 3px 3px 3px #b5b2b1,
+    -3px -3px 5px #ffffff;
+
+    --box-shadow-sidebar:  -3px -3px 7px #ffffff,
+    3px 3px 5px #c8c4c4,
+    inset -3px -3px 7px #ffffff,
+    inset 3px 3px 5px #c8c4c4;
+
+    --box-shadow-nav-primary: -5px -5px 10px #bebbba,
+    5px 5px 10px #ffffff;
+
+    --box-shadow-sidebar-links: 3px 3px 3px #b5b2b1,
+    -3px -3px 5px #ffffff;
+    --box-shadow-sidebar-links-hover: inset 2px 2px 5px #b5b2b1,
+    inset -3px -3px 7px #FFFFFF;
+
+    --box-shadow-sidebar-submenu: inset 2px 2px 5px #b5b2b1,
+    inset -3px -3px 7px #FFFFFF;
+}
+
+/* ***********************************************************************************************************
+ # General
+ *********************************************************************************************************** */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+}
+
+body {
+    color: var(--neumo-color);
+    background-color: var(--neumo-bg-color);
+}
+
+.bg-neumo {
+    background-color: var(--neumo-bg-color) !important;
+}
+
+.text-neumo {
+    color: var(--neumo-color) !important;
+}
+
+.neumo-primary {
+    color: var(--neumo-color);
+    background-color: var(--neumo-bg-color);
+    box-shadow: var(--box-shadow-primary);
+}
+
+.neumo-nav-primary {
+    box-shadow: var(--box-shadow-nav-primary);
+}
+
+/* ***********************************************************************************************************
+ # Nav Pills
+ *********************************************************************************************************** */
+
+.bg-neumo-pills {
+    color: var(--neumo-color);
+    background-color: var(--neumo-bg-color);
+    box-shadow: var(--box-shadow-sidebar-links-hover);
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: var(--neumo-color);
+    background-color: var(--neumo-bg-color);
+    box-shadow: var(--box-shadow-primary);
+}
+
+.bg-neumo-pills .form-control {
+    font-size: 12px !important;
+}
+
+.nav-pills .nav-link {
+    color: #44476a;
+}
+
+/* ***********************************************************************************************************
+ # Form Input Field
+ *********************************************************************************************************** */
+
+.form-control {
+    height: calc(1.5em + 1.2rem + 0.0625rem);
+    padding: 0.6rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--neumo-color);
+    background-color: var(--neumo-bg-color);
+    box-shadow: inset 2px 2px 5px #e1e1e1, inset -3px -3px 7px #FFFFFF;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    outline: 0;
+    color: var(--neumo-color);
+    background-color: var(--neumo-bg-color);
+    border-color: #D1D9E6;
+    box-shadow: inset 2px 2px 5px #b5b2b1, inset -3px -3px 7px #FFFFFF;
+}
+
+.form-check-input[type="checkbox"] {
+    color: var(--neumo-color);
+    background-color: var(--neumo-bg-color);
+    box-shadow: inset 2px 2px 5px #b5b2b1, inset -3px -3px 7px #FFFFFF;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-check-input:checked {
+    background-color: var(--neumo-bg-color);
+    border-color: #D1D9E6;
+    color: var(--neumo-color);
+}
+
+.form-check-input:focus {
+    border-color: #D1D9E6;
+    color: var(--neumo-color);
+    outline: 0;
+    box-shadow: inset 2px 2px 5px #b5b2b1, inset -3px -3px 7px #FFFFFF;
+}
+
+/* ***********************************************************************************************************
+ # Product Image Upload
+ *********************************************************************************************************** */
+
+.AppBody {
+    border:3px dotted #d1d6d6;
+    height: 300px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.AppBody.active {
+    border: 3px solid rgb(49, 168, 12);
+}
+.icon {
+    font-size: 30px;
+    color: rgba(13, 204, 45, 0.651);
+}
+.AppBody h3 {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+.AppBody span {
+    font-size: 12px;
+    font-weight: 500;
+    color: #333;
+    margin: 10px 0 15px 0;
+}
+/*.AppBody button {*/
+/*    padding: 0px 25px;*/
+/*    font-size: 20px;*/
+/*    font-weight: 500;*/
+/*    border: none;*/
+/*    outline: none;*/
+/*    background: #fff;*/
+/*    color: rgba(13, 204, 45, 0.651);*/
+/*    border-radius: 5px;*/
+/*    cursor: pointer;*/
+/*}*/
+.AppBody img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.footer {
+
+}
