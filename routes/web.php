@@ -6,6 +6,7 @@ use App\Http\Controllers\rioWebsite\PagesController;
 
 use App\Http\Controllers\rioAdmin\DashboardController;
 use App\Http\Controllers\rioAdmin\ProductController;
+use App\Http\Controllers\rioAdmin\CategoryController;
 
 
 /*
@@ -34,6 +35,18 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
     Route::post('/product/status/{id}', [ProductController::class, 'status'])->name('product.status');
     /**************************************** Product Routes End *****************************************/
+
+    /**************************************** Product Category Routes *****************************************/
+    Route::get('/category', [CategoryController::class, 'index'])->name('category');
+    Route::get('/category/detail/{id}', [CategoryController::class, 'detail'])->name('category.detail');
+
+    Route::get('/category/update/{id}', [CategoryController::class, 'categoryUpdate'])->name('category.update');
+    Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('category.update');
+
+    Route::post('/category/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
+    Route::post('/category/status/{id}', [CategoryController::class, 'status'])->name('category.status');
+    /**************************************** Product Routes End *****************************************/
+
 
 
 });

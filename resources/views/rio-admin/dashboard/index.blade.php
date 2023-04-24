@@ -40,9 +40,10 @@
             </div>
             <ul class="sub-menu" data-aos="fade-down">
                 <li class="ln"><span class="link_name">Category</span></li>
-                <li><a href="#">HTML & CSS</a></li> <!-- When active This link, then here is added a class (active) -->
-                <li><a href="#">JavaScript</a></li>
-                <li><a href="#">PHP & MySQL</a></li>
+                <li class="d-flex justify-content-start p-0">
+                    <i class='bx bx-list-plus' ></i>
+                    <a href="{{ route('category') }}">Category</a>
+                </li> <!-- When active This link, then here is added a class (active-item) -->
             </ul>
         </li>
     </ul>
