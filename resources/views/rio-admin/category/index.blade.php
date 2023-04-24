@@ -1,1 +1,1 @@
-
+@extends('rio-admin.master')
