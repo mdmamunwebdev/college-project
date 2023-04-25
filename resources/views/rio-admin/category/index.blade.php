@@ -57,7 +57,15 @@
 @endsection
 
 @section('main')
-    this is category page
+    <div class="pagetitle neumo-primary p-3 d-flex justify-content-between" data-aos="fade-down">
+        <h1 class="lh-base">Category</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Category</a></li>
+                <li class="breadcrumb-item active">Category</li>
+            </ol>
+        </nav>
+    </div>
 @endsection
 
 @section('app-scripts')
