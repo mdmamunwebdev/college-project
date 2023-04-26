@@ -56,7 +56,7 @@
 
 @endsection
 
-@section('main')
+@section('main-content')
     <div class="pagetitle neumo-primary p-3 d-flex justify-content-between" data-aos="fade-down">
         <h1 class="lh-base">Category</h1>
         <nav>
@@ -67,7 +67,31 @@
         </nav>
     </div>
 @endsection
-
+    <section class="">
+        <div class="row">
+            <div class="col-md-4">
+                <form action="" method="post">
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <label for="" class="col-md-3">Name</label>
+                            <div class="col-md-9">
+                                <input type="text" name="" id="" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <table>
+ffdfd
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @section('app-scripts')
     <script type="text/javascript">
 

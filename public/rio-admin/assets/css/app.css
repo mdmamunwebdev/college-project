@@ -63,6 +63,12 @@ body {
     box-shadow: var(--box-shadow-nav-primary);
 }
 
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    /*color: var(--bs-nav-tabs-link-active-color);*/
+    /*background-color: var(--bs-nav-tabs-link-active-bg);*/
+    border: none;
+}
+
 /* ***********************************************************************************************************
  # Nav Pills
  *********************************************************************************************************** */
