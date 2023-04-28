@@ -66,36 +66,300 @@
             </ol>
         </nav>
     </div>
-@endsection
-    <section class="">
+
+    <section class="section dashboard">
         <div class="row">
             <div class="col-md-4">
                 <form action="" method="post">
                     <div class="card-body">
-                        <div class="row mb-3">
-                            <label for="" class="col-md-3">Name</label>
-                            <div class="col-md-9">
-                                <input type="text" name="" id="" class="form-control"/>
+                        <div class="card neumo-primary">
+                            <div class="card-body p-2">
+                                <input type="text" class="form-control" name="category-title" placeholder="Title : New Category"/>
+                            </div>
+                        </div>
+                        <div class="card neumo-primary">
+                            <div class="card-body p-2">
+                                <textarea name="category-description" class="form-control " id="summernote" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="card neumo-primary">
+                            <div class="card-body p-2">
+                                <input type="file" name="image" id="" class=""/>
+                            </div>
+                        </div>
+                        <div class="card neumo-primary">
+                            <div class="card-body p-2">
+                                <input type="submit" class="btn btn-success btn-sm rounded-0 w-100" value="SAVE"/>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-body">
-                        <table>
-ffdfd
+                <div class="card bg-neumo" style="box-shadow: none;">
+                    <div class="card-body p-2">
+                        <table class="table table-bordered table-hover table-striped  m-0 neumo-primary dataTable-table" id="categoryTable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Image</th>
+                                    <th>Created at</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td class="text-center">
+                                        <div class="btn btn-success btn-sm">
+                                            <i class="bi bi-eye"></i>
+                                        </div>
+                                        <div class="btn btn-warning btn-sm">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </div>
+                                        <div class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td class="text-center">
+                                        <div class="btn btn-success btn-sm">
+                                            <i class="bi bi-eye"></i>
+                                        </div>
+                                        <div class="btn btn-warning btn-sm">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </div>
+                                        <div class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td class="text-center">
+                                        <div class="btn btn-success btn-sm">
+                                            <i class="bi bi-eye"></i>
+                                        </div>
+                                        <div class="btn btn-warning btn-sm">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </div>
+                                        <div class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td class="text-center">
+                                        <div class="btn btn-success btn-sm">
+                                            <i class="bi bi-eye"></i>
+                                        </div>
+                                        <div class="btn btn-warning btn-sm">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </div>
+                                        <div class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td class="text-center">
+                                        <div class="btn btn-success btn-sm">
+                                            <i class="bi bi-eye"></i>
+                                        </div>
+                                        <div class="btn btn-warning btn-sm">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </div>
+                                        <div class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td class="text-center">
+                                        <div class="btn btn-success btn-sm">
+                                            <i class="bi bi-eye"></i>
+                                        </div>
+                                        <div class="btn btn-warning btn-sm">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </div>
+                                        <div class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td class="text-center">
+                                        <div class="btn btn-success btn-sm">
+                                            <i class="bi bi-eye"></i>
+                                        </div>
+                                        <div class="btn btn-warning btn-sm">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </div>
+                                        <div class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td class="text-center">
+                                        <div class="btn btn-success btn-sm">
+                                            <i class="bi bi-eye"></i>
+                                        </div>
+                                        <div class="btn btn-warning btn-sm">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </div>
+                                        <div class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td class="text-center">
+                                        <div class="btn btn-success btn-sm">
+                                            <i class="bi bi-eye"></i>
+                                        </div>
+                                        <div class="btn btn-warning btn-sm">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </div>
+                                        <div class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td class="text-center">
+                                        <div class="btn btn-success btn-sm">
+                                            <i class="bi bi-eye"></i>
+                                        </div>
+                                        <div class="btn btn-warning btn-sm">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </div>
+                                        <div class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td class="text-center">
+                                        <div class="btn btn-success btn-sm">
+                                            <i class="bi bi-eye"></i>
+                                        </div>
+                                        <div class="btn btn-warning btn-sm">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </div>
+                                        <div class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td class="text-center">
+                                        <div class="btn btn-success btn-sm">
+                                            <i class="bi bi-eye"></i>
+                                        </div>
+                                        <div class="btn btn-warning btn-sm">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </div>
+                                        <div class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td class="text-center">
+                                        <div class="btn btn-success btn-sm">
+                                            <i class="bi bi-eye"></i>
+                                        </div>
+                                        <div class="btn btn-warning btn-sm">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </div>
+                                        <div class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td>Lunch</td>
+                                    <td class="text-center">
+                                        <div class="btn btn-success btn-sm">
+                                            <i class="bi bi-eye"></i>
+                                        </div>
+                                        <div class="btn btn-warning btn-sm">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </div>
+                                        <div class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+@endsection
+
 @section('app-scripts')
     <script type="text/javascript">
+        $(document).ready(function () {
+            $('#categoryTable').DataTable();
+        });
 
-
-
+        $('#summernote').summernote({
+            placeholder: 'Write Here Your Product Descriptions ',
+            tabsize: 2,
+            height: 422,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
     </script>
 @endsection
