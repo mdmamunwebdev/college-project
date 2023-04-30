@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="{{ asset('/') }}rio-admin/assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="{{ asset('/') }}rio-admin/assets/css/bootstrap-icons.css" rel="stylesheet">
 
+    <!-- DatePicker  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+
     <!-- include summernote css -->
     <link href="{{ asset('/') }}rio-admin/assets/css/summernote-lite.min.css" rel="stylesheet">
 
@@ -233,10 +237,12 @@
     </div>
 </section><!--  Main content end -->
 
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center neumo-primary"><i
-        class="bi bi-arrow-up-short"></i></a>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center neumo-primary"><i class="bi bi-arrow-up-short"></i></a>
+
 <script src="{{ asset('/') }}rio-admin/assets/js/jquery-3.6.4.min.js"></script>
 <script src="{{ asset('/') }}rio-admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 <script src="{{ asset('/') }}rio-admin/assets/js/apexcharts.min.js"></script>
 <script src="{{ asset('/') }}rio-admin/assets/js/chart.min.js"></script>

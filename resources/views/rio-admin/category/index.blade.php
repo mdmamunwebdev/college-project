@@ -68,26 +68,26 @@
     </div>
 
     <section class="section dashboard">
-        <div class="row">
+        <div class="row p-0 g-0">
             <div class="col-md-4">
                 <form action="" method="post">
-                    <div class="card-body">
-                        <div class="card neumo-primary">
+                    <div class="card-body" style="padding-right: 10px; padding-left: 10px;">
+                        <div class="card neumo-primary mb-2">
                             <div class="card-body p-2">
                                 <input type="text" class="form-control" name="category-title" placeholder="Title : New Category"/>
                             </div>
                         </div>
-                        <div class="card neumo-primary">
+                        <div class="card neumo-primary mb-2">
                             <div class="card-body p-2">
                                 <textarea name="category-description" class="form-control " id="summernote" cols="30" rows="10"></textarea>
                             </div>
                         </div>
-                        <div class="card neumo-primary">
+                        <div class="card neumo-primary mb-2">
                             <div class="card-body p-2">
                                 <input type="file" name="image" id="" class=""/>
                             </div>
                         </div>
-                        <div class="card neumo-primary">
+                        <div class="card neumo-primary mb-2">
                             <div class="card-body p-2">
                                 <input type="submit" class="btn btn-success btn-sm rounded-0 w-100" value="SAVE"/>
                             </div>
@@ -350,7 +350,7 @@
         $('#summernote').summernote({
             placeholder: 'Write Here Your Product Descriptions ',
             tabsize: 2,
-            height: 422,
+            height: 311,
             toolbar: [
                 ['style', ['style']],
                 ['font', ['bold', 'underline', 'clear']],

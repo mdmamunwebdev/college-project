@@ -46,9 +46,10 @@
             </div>
             <ul class="sub-menu" data-aos="fade-down">
                 <li class="ln"><span class="link_name">Category</span></li>
-                <li><a href="#">HTML & CSS</a></li> <!-- When active This link, then here is added a class (active) -->
-                <li><a href="#">JavaScript</a></li>
-                <li><a href="#">PHP & MySQL</a></li>
+                <li class="d-flex justify-content-start p-0">
+                    <i class='bx bx-list-plus' ></i>
+                    <a href="{{ route('category') }}">Category</a>
+                </li> <!-- When active This link, then here is added a class (active-item) -->
             </ul>
         </li>
     </ul>
@@ -90,6 +91,7 @@
                             <div class="d-flex align-items-start">
                                 <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                     <button class="nav-link active rounded-0" id="v-pills-general-tab" data-bs-toggle="pill" data-bs-target="#v-pills-general" type="button" role="tab" aria-controls="v-pills-general" aria-selected="true">General</button>
+                                    <button class="nav-link rounded-0" id="v-pills-inventory-tab" data-bs-toggle="pill" data-bs-target="#v-pills-inventory" type="button" role="tab" aria-controls="v-pills-inventory" aria-selected="true">Inventory</button>
                                     <button class="nav-link rounded-0" id="v-pills-shipping-tab" data-bs-toggle="pill" data-bs-target="#v-pills-shipping" type="button" role="tab" aria-controls="v-pills-shipping" aria-selected="false">Shipping</button>
                                     <button class="nav-link rounded-0" id="v-pills-advance-tab" data-bs-toggle="pill" data-bs-target="#v-pills-advance" type="button" role="tab" aria-controls="v-pills-advance" aria-selected="false">Advance</button>
                                 </div>
@@ -109,19 +111,44 @@
                                                         <input type="number" name="" id="" class="form-control"/>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <hr>
-                                            <div class="card-body p-3">
                                                 <div class="row mb-3">
-                                                    <label for="" class="col-4">Regular Price</label>
-                                                    <div class="col-6">
-                                                        <input type="number" name="" id="" class="form-control"/>
+                                                    <label for="" class="col-4">Sale Price Date</label>
+                                                    <div class="col-8">
+                                                        <div class="row mb-3">
+                                                            <div class="col-12">
+                                                                <input type="date" name="startSalePriceDate" id="startSalePriceDate" class="form-control"  placeholder="From… YYYY-MM-DD"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <div class="col-12">
+                                                                <input type="date" name="endSalePriceDate" id="endSalePriceDate" class="form-control" placeholder="To… YYYY-MM-DD"/>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-inventory" role="tabpanel" aria-labelledby="v-pills-inventory-tab" tabindex="0">
+                                        <div class="card bg-neumo-pills">
+                                            <div class="card-body  p-3">
                                                 <div class="row mb-3">
-                                                    <label for="" class="col-4">Sale Price</label>
-                                                    <div class="col-4">
-                                                        <input type="number" name="" id="" class="form-control"/>
+                                                    <label for="" class="col-4">Stock Status</label>
+                                                    <div class="col-6">
+                                                        <div class="radio-input">
+                                                            <label class="label">
+                                                                <input type="radio" name="radio" checked="">
+                                                                <span class="check"></span>
+                                                            </label>
+                                                            <label class="label">
+                                                                <input type="radio" name="radio">
+                                                                <span class="check"></span>
+                                                            </label>
+                                                            <label class="label">
+                                                                <input type="radio" name="radio">
+                                                                <span class="check"></span>
+                                                            </label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -131,28 +158,19 @@
                                         <div class="card bg-neumo-pills">
                                             <div class="card-body  p-3">
                                                 <div class="row mb-3">
-                                                    <label for="" class="col-4">Regular Price</label>
+                                                    <label for="" class="col-4">Weight</label>
                                                     <div class="col-6">
                                                         <input type="number" name="" id="" class="form-control"/>
                                                     </div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <label for="" class="col-4">Sale Price</label>
+                                                    <label for="" class="col-4">Dimensions</label>
                                                     <div class="col-4">
                                                         <input type="number" name="" id="" class="form-control"/>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <hr>
-                                            <div class="card-body p-3">
-                                                <div class="row mb-3">
-                                                    <label for="" class="col-4">Regular Price</label>
-                                                    <div class="col-6">
+                                                    <div class="col-4">
                                                         <input type="number" name="" id="" class="form-control"/>
                                                     </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <label for="" class="col-4">Sale Price</label>
                                                     <div class="col-4">
                                                         <input type="number" name="" id="" class="form-control"/>
                                                     </div>
@@ -164,30 +182,14 @@
                                         <div class="card bg-neumo-pills">
                                             <div class="card-body  p-3">
                                                 <div class="row mb-3">
-                                                    <label for="" class="col-4">Regular Price</label>
+                                                    <label for="" class="col-4">Condition</label>
                                                     <div class="col-6">
-                                                        <input type="number" name="" id="" class="form-control"/>
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <label for="" class="col-4">Sale Price</label>
-                                                    <div class="col-4">
-                                                        <input type="number" name="" id="" class="form-control"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <hr>
-                                            <div class="card-body p-3 ">
-                                                <div class="row mb-3">
-                                                    <label for="" class="col-4">Regular Price</label>
-                                                    <div class="col-6">
-                                                        <input type="number" name="" id="" class="form-control"/>
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <label for="" class="col-4">Sale Price</label>
-                                                    <div class="col-4">
-                                                        <input type="number" name="" id="" class="form-control"/>
+                                                        <select name="" id="" class="form-select">
+                                                            <option value="0" selected>Default</option>
+                                                            <option value="1">New</option>
+                                                            <option value="2">Refurbished</option>
+                                                            <option value="3">Used</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -222,7 +224,8 @@
                                             </button>
                                             <ul class="dropdown-menu neumo-primary">
                                                 <li><a class="dropdown-item" href="#">Published</a></li>
-                                                <li><a class="dropdown-item" href="#">Unpublished</a></li>
+                                                <li><a class="dropdown-item" href="#">Pending Review</a></li>
+                                                <li><a class="dropdown-item" href="#">Draft</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -240,7 +243,8 @@
                                             </button>
                                             <ul class="dropdown-menu neumo-primary">
                                                 <li><a class="dropdown-item" href="#">Public</a></li>
-                                                <li><a class="dropdown-item" href="#">Only Me</a></li>
+                                                <li><a class="dropdown-item" href="#">Private</a></li>
+                                                <li><a class="dropdown-item" href="#">Password protected</a></li>
                                             </ul>
                                         </div>
 
@@ -248,11 +252,13 @@
                                     <div class="d-flex justify-content-between mb-2">
                                         <i class="bi bi-calendar3"></i>
                                         <span>Published On: </span>
-                                        <span>1-jun-2023</span>
-                                        <div class="btn btn-sm btn-danger" onclick="document.getElementById('publishedDate').showPicker()">Edit</div>
-                                        <div>
-                                            <input type="date" name="published-date" id="publishedDate" class="pointer-events-none border-0 neumo-primary" style="width: 0px; height: 0px;"/>
+                                        <div class="neumo-primary" style="width: 40%">
+                                            <input type="text" name="published-date" id="publishedDate" class=" border-0 text-center w-100 h-100 bg-neumo"/>
                                         </div>
+{{--                                        <div class="btn btn-sm btn-danger" onclick="document.getElementById('publishedDate').removeAttribute('readonly'); document.getElementById('publishedDate').showPicker()">Edit</div>--}}
+{{--                                        <div>--}}
+{{--                                            <input type="date" name="published-date" id="publishedDate" class="pointer-events-none border-0 neumo-primary" style="width: 0px; height: 0px;"/>--}}
+{{--                                        </div>--}}
                                     </div>
                                 </div>
                             </div>
@@ -448,6 +454,24 @@
                 ['view', ['fullscreen', 'codeview', 'help']]
             ]
         });
+
+        $("#startSalePriceDate").flatpickr({
+            minDate: "today",
+            dateFormat: "Y-m-d"
+        });
+
+        $("#endSalePriceDate").flatpickr({
+            minDate: "today",
+            dateFormat: "Y-m-d"
+        });
+
+        $("#publishedDate").flatpickr({
+            enableTime: true,
+            minDate: "today",
+            defaultDate: ['today', 'H:i'],
+            dateFormat: "Y-m-d H:i",
+        });
+
 
     </script>
 @endsection
