@@ -38,6 +38,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     /**************************************** Product Category Routes *****************************************/
     Route::get('/category', [CategoryController::class, 'index'])->name('category');
+
+    Route::post('/category/create', [CategoryController::class, 'create'])->name('category.create');
+
     Route::get('/category/detail/{id}', [CategoryController::class, 'detail'])->name('category.detail');
 
     Route::get('/category/update/{id}', [CategoryController::class, 'categoryUpdate'])->name('category.update');

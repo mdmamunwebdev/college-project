@@ -42,7 +42,7 @@
 <div class="sidebar h-100 position-fixed ">
     <!-- Logo Details of sidebar start -->
     <div class="logo-details w-100 d-flex align-items-center">
-        <a href="{{ route('dashboard') }}" class="nav-link"><i class='bx bxl-c-plus-plus text-center'></i></a>
+        <a href="{{ route('dashboard') }}" class="nav-link"><i class='bx bxs-registered text-center'></i></a>
         <span class="logo_name fw-bold"><a href="{{ route('dashboard') }}" class="nav-link">RIO</a></span>
     </div> <!-- Logo Details of sidebar end -->
 
@@ -57,15 +57,14 @@
 <section class="main-section position-relative">
     <nav class="navbar navbar-expand">
         <div class="container-fluid">
-            <i class='bx bx-menu fw-bold me-5 neumo-primary p-2' data-aos="zoom-in-up" data-aos-duration="1000"
-               style="font-size: 20px"></i>
+            <i class='bx bx-menu fw-bold me-5 neumo-primary p-2' data-aos="zoom-in-up" data-aos-duration="1000" style="font-size: 20px"></i>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav header-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown pe-3">
                         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
                            data-bs-toggle="dropdown"> <i
-                                class="bi bi-bell rounded-circle neumo-primary py-1 px-2 border border-danger"></i>
+                                class="bi bi-bell rounded-circle neumo-primary py-1 px-2 border-neumo"></i>
                             <span class="badge bg-primary badge-number">4</span> </a>
                         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications neumo-primary">
                             <li class="dropdown-header"> You have 4 new notifications <a href="#"><span
@@ -123,7 +122,7 @@
                     <li class="nav-item dropdown pe-3">
                         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
                            data-bs-toggle="dropdown"> <i
-                                class="bi bi-chat-left-text rounded-circle neumo-primary py-1 px-2 border border-danger"></i>
+                                class="bi bi-chat-left-text rounded-circle neumo-primary py-1 px-2 border-neumo"></i>
                             <span class="badge bg-success badge-number">3</span> </a>
                         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages neumo-primary">
                             <li class="dropdown-header"> You have 3 new messages <a href="#"><span
@@ -180,9 +179,9 @@
                         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
                            data-bs-toggle="dropdown"> <img src="{{ asset('/') }}rio-admin/assets/img/profile-img.jpg"
                                                            alt="Profile"
-                                                           class="rounded-circle neumo-primary p-1 border border-danger">
+                                                           class="rounded-circle neumo-primary p-1 border-neumo">
                             <span
-                                class="d-none d-md-block dropdown-toggle ps-2 text-danger text-capitalize">{{ Auth::user()->name }}</span>
+                                class="d-none d-md-block dropdown-toggle ps-2 text-neumo text-capitalize">{{ Auth::user()->name }}</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile neumo-primary">
                             <li class="dropdown-header">
@@ -228,11 +227,11 @@
         @yield('main-content')
 
         <footer id="footer" class="footer neumo-primary mb-3">
-            <div class="copyright text-danger">
+            <div class="copyright text-neumo">
                 <script>document.write(new Date().getFullYear())</script> &copy; Copyright
                 <strong><span>Compnay Name </span></strong> RIO. All Rights Reserved
             </div>
-            <div class="credits text-danger"> Developed By <a href="#">Abdullah Al Mamun</a></div>
+            <div class="credits text-neumo"> Developed By <a href="#" class="text-secondary-neumo">Abdullah Al Mamun</a></div>
         </footer>
     </div>
 </section><!--  Main content end -->
@@ -249,6 +248,9 @@
 <script src="{{ asset('/') }}rio-admin/assets/js/echarts.min.js"></script>
 
 <script src="{{ asset('/') }}rio-admin/assets/js/datatables.min.js"></script>
+<script src="{{ asset('/') }}rio-admin/assets/js/pdfmake.min.js"></script>
+<script src="{{ asset('/') }}rio-admin/assets/js/vfs_fonts.js"></script>
+<script src="{{ asset('/') }}rio-admin/assets/js/jszip.min.js"></script>
 
 <script src="{{ asset('/') }}rio-admin/assets/js/tinymce.min.js"></script>
 <script src="{{ asset('/') }}rio-admin/assets/js/validate.js"></script>

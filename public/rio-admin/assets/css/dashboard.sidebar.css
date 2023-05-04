@@ -126,10 +126,10 @@
      /*box-shadow: var(--box-shadow-sidebar-links-hover);*/
  }
  .sidebar .nav-links li i {
-     height: 50px;
+     height: 42px;
      min-width: 60px;
      text-align: center;
-     line-height: 50px;
+     line-height: 42px;
      color: var(--neumo-color);
      /*color: #fff;*/
      font-size: 20px;
@@ -159,7 +159,7 @@
  }
 
  .sidebar .nav-links li a .link_name {
-     font-size: 15px;
+     font-size: 12px;
      font-weight: 400;
      color: var(--neumo-color);
      /*color: #fff;*/
@@ -184,7 +184,7 @@
  .sidebar .nav-links li .sub-menu a {
      color: var(--neumo-color);
      /*color: #fff;*/
-     font-size: 15px;
+     font-size: 12px;
      padding: 5px 0;
      white-space: nowrap;
      opacity: 0.6;
