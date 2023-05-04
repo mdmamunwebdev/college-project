@@ -95,8 +95,9 @@
   }
   .back-to-top:hover {
 	background-color: var(--neumo-color);
-	box-shadow:  3px 3px 8px #b81722,
-	  -3px -3px 8px #ee1f2c;
+	/*box-shadow:  3px 3px 8px #b81722,*/
+	/*  -3px -3px 8px #ee1f2c;*/
+    box-shadow: var(--box-shadow-primary);
   }
   .back-to-top:hover i {
 	color: var(--neumo-bg-color);

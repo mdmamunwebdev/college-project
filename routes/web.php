@@ -7,6 +7,8 @@ use App\Http\Controllers\rioWebsite\PagesController;
 use App\Http\Controllers\rioAdmin\DashboardController;
 use App\Http\Controllers\rioAdmin\ProductController;
 use App\Http\Controllers\rioAdmin\CategoryController;
+use App\Http\Controllers\rioAdmin\OrderController;
+use App\Http\Controllers\TagController;
 
 
 /*
@@ -16,6 +18,13 @@ use App\Http\Controllers\rioAdmin\CategoryController;
 */
 
 Route::get('/', [PagesController::class, 'index'])->name('home');
+
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+*/
+
 Route::get('/our-foods', [PagesController::class, 'ourFoods'])->name('our-foods');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
@@ -48,6 +57,34 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::post('/category/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
     Route::post('/category/status/{id}', [CategoryController::class, 'status'])->name('category.status');
+    /**************************************** Product Routes End *****************************************/
+
+    /**************************************** Product Tag Routes *****************************************/
+    Route::get('/tag', [TagController::class, 'index'])->name('tag');
+
+    Route::post('/tag/create', [TagController::class, 'create'])->name('tag.create');
+
+    Route::get('/tag/detail/{id}', [TagController::class, 'detail'])->name('tag.detail');
+
+    Route::get('/tag/update/{id}', [TagController::class, 'tagUpdate'])->name('tag.update');
+    Route::post('/tag/update/{id}', [TagController::class, 'update'])->name('tag.update');
+
+    Route::post('/tag/delete/{id}', [TagController::class, 'delete'])->name('tag.delete');
+    Route::post('/tag/status/{id}', [TagController::class, 'status'])->name('tag.status');
+    /**************************************** Product Routes End *****************************************/
+
+    /**************************************** Order Routes *****************************************/
+    Route::get('/order/list', [OrderController::class, 'index'])->name('order.list');
+    Route::get('/order/detail/{id}', [OrderController::class, 'detail'])->name('order.detail');
+
+    Route::get('/order/create', [OrderController::class, 'orderCreateForm'])->name('order.create');
+    Route::post('/order/create', [OrderController::class, 'create'])->name('order.create');
+
+    Route::get('/order/update/{id}', [OrderController::class, 'orderUpdateForm'])->name('order.update');
+    Route::post('/order/update/{id}', [OrderController::class, 'update'])->name('order.update');
+
+    Route::post('/order/delete/{id}', [OrderController::class, 'delete'])->name('order.delete');
+    Route::post('/order/status/{id}', [OrderController::class, 'status'])->name('order.status');
     /**************************************** Product Routes End *****************************************/
 
 

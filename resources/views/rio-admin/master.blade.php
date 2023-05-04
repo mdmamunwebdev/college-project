@@ -57,7 +57,7 @@
 <section class="main-section position-relative">
     <nav class="navbar navbar-expand">
         <div class="container-fluid">
-            <i class='bx bx-menu fw-bold me-5 neumo-primary p-2' data-aos="zoom-in-up" data-aos-duration="1000" style="font-size: 20px"></i>
+            <i class='bx bx-menu fw-bold me-5 neumo-primary p-2'  style="font-size: 20px"></i>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav header-nav ms-auto mb-2 mb-lg-0">

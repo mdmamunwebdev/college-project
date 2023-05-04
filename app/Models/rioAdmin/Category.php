@@ -22,8 +22,9 @@ class Category extends Model
 
     public static function categoryNew($req) {
         self::$category = new Category();
-        self::$category->title = $req->title;
+        self::$category->name = $req->name;
         self::$category->description = $req->description;
+        self::$category->status = $req->status;
         self::$category->image = self::catImgUrl($req);
         self::$category->save();
         return self::$category;

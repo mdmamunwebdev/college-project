@@ -9,7 +9,7 @@
     <ul class="nav-links h-100 py-3 px-2">
         <li class="mb-2 with-out-submenu">
             <a href="{{ route('dashboard') }}">
-                <i class='bx bx-grid-alt neumo-color' ></i>
+                <i class='bx bx-grid-alt neumo-color'></i>
                 <span class="link_name ">Dashboard</span>
             </a>
             <ul class="sub-menu blank">
@@ -24,7 +24,7 @@
                 </a>
                 <i class='bx bxs-chevron-down arrow'></i>
             </div>
-            <ul class="sub-menu" data-aos="fade-down">
+            <ul class="sub-menu">
                 <li class="ln"><span class="link_name">Product</span></li>
                 <li class="d-flex justify-content-start p-0">
                     <i class='bx bx-list-plus' ></i>
@@ -44,7 +44,7 @@
                 </a>
                 <i class='bx bxs-chevron-down arrow'></i>
             </div>
-            <ul class="sub-menu" data-aos="fade-down">
+            <ul class="sub-menu">
                 <li class="ln"><span class="link_name">Category</span></li>
                 <li class="d-flex justify-content-start p-0">
                     <i class='bx bx-list-plus' ></i>
@@ -58,7 +58,7 @@
 
 @section('main-content')
 
-    <div class="pagetitle neumo-primary p-3 d-flex justify-content-between" data-aos="fade-down">
+    <div class="pagetitle neumo-primary p-3 d-flex justify-content-between">
         <h1 class="lh-base">Product</h1>
         <nav>
             <ol class="breadcrumb">
@@ -351,10 +351,10 @@
                                             <form action="" method="post">
                                                 <div class="row mb-1 g-0">
                                                     <div class="col-9">
-                                                        <input type="text" class="form-control w-100 rounded-0" style="font-size: 12px;"/>
+                                                        <input type="text" class="form-control w-100 rounded-0 text-primary-size"/>
                                                     </div>
                                                     <div class="col-3">
-                                                        <input type="submit" class="btn btn-dark btn-sm w-100 h-100 rounded-0" value="ADD" id="" style="font-size: 12px;"/>
+                                                        <input type="submit" class="btn btn-dark btn-sm w-100 h-100 rounded-0 text-primary-size" value="ADD" id=""/>
                                                     </div>
                                                 </div>
                                             </form>
@@ -365,7 +365,7 @@
                         </div>
                     </div>
 
-                    <div class="card card-body accordion neumo-primary" id="accordionTag" style="font-size: 12px">
+                    <div class="card card-body accordion neumo-primary text-primary-size" id="accordionTag" >
                         <div class="accordion-item">
                             <h2 class="accordion-header border-bottom border-1 border-light">
                                 <button class="accordion-button px-0 bg-neumo text-neumo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
@@ -408,10 +408,10 @@
                                             <form action="" method="post">
                                                 <div class="row mb-1 g-0">
                                                     <div class="col-9">
-                                                        <input type="text" class="form-control w-100 rounded-0" style="font-size: 12px;"/>
+                                                        <input type="text" class="form-control w-100 rounded-0 text-primary-size"/>
                                                     </div>
                                                     <div class="col-3">
-                                                        <input type="submit" class="btn btn-dark btn-sm w-100 h-100 rounded-0" value="ADD" id="" style="font-size: 12px;"/>
+                                                        <input type="submit" class="btn btn-dark btn-sm w-100 h-100 rounded-0 text-primary-size" value="ADD" id=""/>
                                                     </div>
                                                 </div>
                                             </form>
@@ -422,7 +422,7 @@
                         </div>
                     </div>
 
-                    <div class="card card-body accordion neumo-primary" id="accordionGallery" style="font-size: 12px">
+                    <div class="card card-body accordion neumo-primary text-primary-size" id="accordionGallery">
                         <div class="accordion-item">
                             <h2 class="accordion-header border-bottom border-1 border-light">
                                 <button class="accordion-button px-0 bg-neumo text-neumo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">

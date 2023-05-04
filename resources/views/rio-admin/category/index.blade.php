@@ -74,13 +74,25 @@
                     @csrf
 
                     <div class="card card-body neumo-primary mb-2 p-0 ">
-                        <input type="text" class="form-control" name="title" placeholder="Title : New Category"/>
+                        <input type="text" class="form-control" name="name" placeholder="Title : New Category"/>
                     </div>
                     <div class="card card-body neumo-primary mb-2 p-0">
                         <textarea name="description" class="form-control" id="summernote" cols="30" rows="10"></textarea>
                     </div>
-                    <div class="card card-body neumo-primary mb-2 p-1 border-neumo text-primary-size">
-                        <input type="file" name="image" id="" class="w-100"/>
+                    <div class="row g-2">
+                        <div class="col-md-8">
+                            <div class="card card-body neumo-primary mb-2 p-1 border-neumo text-primary-size">
+                                <input type="file" name="image" id="" class="w-100"/>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-body neumo-primary mb-2 p-0 border-neumo">
+                                <select name="status" id="" class="form-select bg-neumo text-primary-size">
+                                    <option value="0" selected class="bg-neumo">Active</option>
+                                    <option value="1" class="bg-neumo">Deactive</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="card card-body neumo-primary mb-2 mt-3 p-0 border-secondary-neumo">
                         <button type="submit" class="btn btn-sm rounded-0 w-100 p-1 text-secondary-neumo">SAVE</button>
