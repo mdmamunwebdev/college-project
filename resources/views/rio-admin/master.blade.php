@@ -54,7 +54,7 @@
 </div><!--  Sidebar end -->
 
 <!--  Main content start -->
-<section class="main-section position-relative">
+<section class="main-section position-relative" id="mainSection">
     <nav class="navbar navbar-expand">
         <div class="container-fluid">
             <i class='bx bx-menu fw-bold me-5 neumo-primary p-2'  style="font-size: 20px"></i>
@@ -222,11 +222,11 @@
     </nav>
 
 
-    <div class="main-content  container-fluid">
+    <div class="main-content  container-fluid" id="mainContent">
 
         @yield('main-content')
 
-        <footer id="footer" class="footer neumo-primary mb-3">
+        <footer id="footer" class="footer footer-extra neumo-primary my-2">
             <div class="copyright text-neumo">
                 <script>document.write(new Date().getFullYear())</script> &copy; Copyright
                 <strong><span>Compnay Name </span></strong> RIO. All Rights Reserved
@@ -265,7 +265,20 @@
 <script src="{{ asset('/') }}rio-admin/assets/js/app.js"></script>
 
 <script type="text/javascript">
+
     AOS.init();
+
+    /************************************* Footer ************************************/
+    const mainSectionClientHeight = document.getElementById('mainSection').clientHeight;
+    const mainSectionScrollHeight = document.getElementById('mainSection').scrollHeight;
+
+    console.log('Client Height = '+mainSectionClientHeight+' Scroll height = '+mainSectionScrollHeight);
+
+    if( mainSectionClientHeight < mainSectionScrollHeight ) {
+        document.getElementById('footer').classList.remove("footer-extra");
+    }
+    /************************************* Footer End ************************************/
+
 </script>
 
 @yield('app-scripts')

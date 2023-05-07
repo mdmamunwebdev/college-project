@@ -8,6 +8,7 @@
     --neumo-bg-color: #E6E7EE;
     /*--neumo-color: #D31B27;*/
     --neumo-color: #44476a;
+    --neumo-hover-color: #9a9dbf;
     --neumo-secondary-color: #2D4CC8;
     --neumo-success-color: #00BF9A;
     --neumo-dark-color: #44476a;
@@ -448,9 +449,8 @@ div.dataTables_wrapper .dt-buttons .btn {
  # App Footer
  *********************************************************************************************************** */
 
-.footer {
+.footer-extra {
     position: absolute;
     width: 98%;
     bottom: 0;
-
 }

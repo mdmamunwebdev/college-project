@@ -13,8 +13,10 @@ class CategoryController extends Controller
     }
 
     function create(Request $request) {
+
         Category::categoryNew($request);
-        return redirect('/category')->with('addCatMsg', 'Category is added with successfully !!');
+
+        return redirect()->back()->with('addCatMsg', 'Category is added with successfully !!');
     }
 
     function categoryUpdate() {

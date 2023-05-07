@@ -323,9 +323,9 @@
                                     </ul>
                                     <div class="tab-content" id="myTabContent">
                                         <div class="p-3 tab-pane fade show active bg-neumo text-neumo" id="one-category-tab-pane" role="tabpanel" aria-labelledby="one-tab-category" tabindex="0">
-                                            @if( is_array($categories) )
+                                            @if( count($categories) )
                                                 @foreach( $categories as $category)
-                                                    <label for="cat_{{ $category->id }}" class="me-1 mt-1"><input type="checkbox" name="category[]" id="cat_{{ $category->id }}" value="{{ $category->id }}" class="me-2"/>{{ $category->title }}</label>
+                                                    <label for="cat_{{ $category->id }}" class="me-1 mt-1"><input type="checkbox" name="category[]" id="cat_{{ $category->id }}" value="{{ $category->id }}" class="me-2"/>{{ $category->name }}</label>
                                                 @endforeach
                                             @else
                                                 <span>No Category yet !!</span>

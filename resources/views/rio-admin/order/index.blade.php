@@ -165,13 +165,297 @@
     </div>
 
     <section class="section dashboard">
-        this is a order page
+        <div class="container-fluid p-0">
+            <div class="row g-3">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card-body accordion neumo-primary text-primary-size" id="accordionOrderDetail">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header border-bottom border-1 border-light">
+                                        <button class="accordion-button px-0 bg-neumo text-neumo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Order #30 Detail
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show px-0" data-bs-parent="#accordionOrderDetail">
+                                        <div class="accordion-body bg-neumo">
+                                            <h6>General</h6>
+                                            <div class="row mb-2">
+                                                <lable for="" class="col-12 mb-2">Date created:</lable>
+                                                <div class="col-12">
+                                                    <input type="date" name="published_date" id="DateCreated" class="p-1 w-100 h-100 neumo-primary border-neumo"/>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <lable for="" class="col-12 mb-2">Status:</lable>
+                                                <div class="col-12">
+                                                    <select name="" id="" class="form-select neumo-primary border-neumo text-primary-size">
+                                                        <option selected>-- select any one --</option>
+                                                        <option value="">Pending</option>
+                                                        <option value="">Pending</option>
+                                                        <option value="">Pending</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-2 g-3">
+                                                <div class="col-md-6">
+                                                    <h6 class="my-2">Billing</h6>
+                                                    <div class="card card-body p-2 neumo-primary">
+
+                                                        <div class="row mb-2 g-2">
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <label for="" class="col-12">Name</label>
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="" id="" class="form-control" style="font-size: 11px; padding: 8px;">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <label for="" class="col-12">Name</label>
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="" id="" class="form-control" style="font-size: 11px; padding: 8px;">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <label for="" class="col-12">Name</label>
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="" id="" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <label for="" class="col-12">Name</label>
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="" id="" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <label for="" class="col-12">Name</label>
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="" id="" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <label for="" class="col-12">Name</label>
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="" id="" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <label for="" class="col-12">Name</label>
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="" id="" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <label for="" class="col-12">Name</label>
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="" id="" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <lable for="" class="col-12 mb-2">Date created:</lable>
+                                                            <div class="col-12">
+                                                                <input type="date" name="published_date" id="DateCreated" class="form-control w-100 h-100 neumo-primary border-neumo"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <lable for="" class="col-12 mb-2">Date created:</lable>
+                                                            <div class="col-12">
+                                                                <input type="date" name="published_date" id="DateCreated" class="form-control w-100 h-100 neumo-primary border-neumo"/>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 ">
+                                                    <h6 class="my-2">Shipping</h6>
+                                                    <div class="card card-body p-2 neumo-primary">
+
+                                                        <div class="row mb-2">
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <label for="" class="col-12">Name</label>
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="" id="" class="form-control text-primary-size">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <label for="" class="col-12">Name</label>
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="" id="" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <label for="" class="col-12">Name</label>
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="" id="" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <label for="" class="col-12">Name</label>
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="" id="" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <label for="" class="col-12">Name</label>
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="" id="" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <label for="" class="col-12">Name</label>
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="" id="" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <label for="" class="col-12">Name</label>
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="" id="" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <label for="" class="col-12">Name</label>
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="" id="" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <lable for="" class="col-12 mb-2">Date created:</lable>
+                                                            <div class="col-12">
+                                                                <input type="date" name="published_date" id="DateCreated" class="form-control w-100 h-100 neumo-primary border-neumo"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <lable for="" class="col-12 mb-2">Date created:</lable>
+                                                            <div class="col-12">
+                                                                <input type="date" name="published_date" id="DateCreated" class="form-control w-100 h-100 neumo-primary border-neumo"/>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card card-body accordion neumo-primary text-primary-size" id="accordionOrderCal">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header border-bottom border-1 border-light">
+                                        <button class="accordion-button px-0 bg-neumo text-neumo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                            Order Calculator
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse show  px-0" data-bs-parent="#accordionOrderCal">
+                                        <div class="accordion-body bg-neumo">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores consequuntur dolore ducimus earum facere, facilis fuga impedit inventore ipsa, iste labore maiores modi nam natus nostrum pariatur praesentium quae quidem rerum sed similique totam veniam. Numquam, quo, quod. Blanditiis delectus eaque iure minus molestiae nobis provident quae quidem sequi?
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card-body accordion neumo-primary text-primary-size" id="accordionOrderAction">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header border-bottom border-1 border-light">
+                                        <button class="accordion-button px-0 bg-neumo text-neumo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                            Order Action
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse show  px-0" data-bs-parent="#accordionOrderAction">
+                                        <div class="accordion-body bg-neumo">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consectetur cum eius esse excepturi fuga maiores nobis numquam, officiis quae quibusdam sunt. Accusantium adipisci aliquam amet animi consequatur cumque eius et eum harum illum magnam molestiae nemo nisi nobis, pariatur placeat praesentium quae, quidem quisquam quo quos repellat veritatis. Doloribus!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card card-body accordion neumo-primary text-primary-size" id="accordionOrderNote">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header border-bottom border-1 border-light">
+                                        <button class="accordion-button px-0 bg-neumo text-neumo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                            Order Note
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse show  px-0" data-bs-parent="#accordionOrderNote">
+                                        <div class="accordion-body bg-neumo">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consectetur cum eius esse excepturi fuga maiores nobis numquam, officiis quae quibusdam sunt. Accusantium adipisci aliquam amet animi consequatur cumque eius et eum harum illum magnam molestiae nemo nisi nobis, pariatur placeat praesentium quae, quidem quisquam quo quos repellat veritatis. Doloribus!
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, quidem!
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dignissimos dolorum fuga hic nam necessitatibus neque perferendis sapiente veritatis voluptatibus.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
 @endsection
 
 @section('app-scripts')
     <script type="text/javascript">
+
+        $("#DateCreated").flatpickr({
+            minDate: "today",
+            defaultDate: ['today'],
+            dateFormat: "Y-m-d",
+        });
 
     </script>
 @endsection

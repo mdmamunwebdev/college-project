@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\rioAdmin\Category;
 use App\Models\rioAdmin\Tag;
 use App\Models\rioAdmin\Product;
+use App\Models\rioAdmin\ProductCategory;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -17,14 +18,13 @@ class ProductController extends Controller
     }
 
     function productCreateForm() {
+
         return view('rio-admin.product.create', ['categories' => Category::all(), 'tags' => Tag::all()]);
     }
 
     function create(Request $request) {
-
-//        return $request;
-
        $this->product = Product::productAdd($request);
+       ProductCategory::addPrductCat($this->product, $request);
 
         return redirect('/product/list')->with('productAddMsg', 'A new product is added with successfully !!');
     }

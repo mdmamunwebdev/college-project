@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\rioWebsite\PagesController;
+use App\Http\Controllers\rioWebsite\CartController;
 
 use App\Http\Controllers\rioAdmin\DashboardController;
 use App\Http\Controllers\rioAdmin\ProductController;
@@ -26,6 +27,8 @@ Route::get('/', [PagesController::class, 'index'])->name('home');
 */
 
 Route::get('/our-foods', [PagesController::class, 'ourFoods'])->name('our-foods');
+Route::get('/checkout', [PagesController::class, 'checkout'])->name('checkout');
+Route::get('/cart/add', [CartController::class, 'addCart'])->name('cart');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
 
@@ -57,7 +60,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::post('/category/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
     Route::post('/category/status/{id}', [CategoryController::class, 'status'])->name('category.status');
-    /**************************************** Product Routes End *****************************************/
+    /**************************************** Product Category Routes End *****************************************/
 
     /**************************************** Product Tag Routes *****************************************/
     Route::get('/tag', [TagController::class, 'index'])->name('tag');
@@ -71,7 +74,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::post('/tag/delete/{id}', [TagController::class, 'delete'])->name('tag.delete');
     Route::post('/tag/status/{id}', [TagController::class, 'status'])->name('tag.status');
-    /**************************************** Product Routes End *****************************************/
+    /**************************************** Product Tag Routes End *****************************************/
 
     /**************************************** Order Routes *****************************************/
     Route::get('/order/list', [OrderController::class, 'index'])->name('order.list');
@@ -85,7 +88,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::post('/order/delete/{id}', [OrderController::class, 'delete'])->name('order.delete');
     Route::post('/order/status/{id}', [OrderController::class, 'status'])->name('order.status');
-    /**************************************** Product Routes End *****************************************/
+    /**************************************** Order Routes End *****************************************/
 
 
 
