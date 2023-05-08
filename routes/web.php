@@ -28,7 +28,7 @@ Route::get('/', [PagesController::class, 'index'])->name('home');
 
 Route::get('/our-foods', [PagesController::class, 'ourFoods'])->name('our-foods');
 Route::get('/checkout', [PagesController::class, 'checkout'])->name('checkout');
-Route::get('/cart/add', [CartController::class, 'addCart'])->name('cart');
+Route::get('/cart/add', [CartController::class, 'addCart'])->name('cart.add');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
 

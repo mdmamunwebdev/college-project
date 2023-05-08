@@ -10,6 +10,9 @@
     <link href="{{ asset('/') }}rio-website/assets/image/favicon.png" rel="icon">
     <link href="{{ asset('/') }}rio-website/assets/image/apple-touch-icon.png" rel="apple-touch-icon">
 
+    <!-- Jquery js -->
+    <script src="{{ asset('/') }}rio-website/assets/vendor/jquery/jquery-3.6.4.min.js"></script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -367,6 +370,7 @@
 <!-- ======= Cart Items Ends ======= -->
 
 <!-- Vendor JS Files -->
+{{--<script src="{{ asset('/') }}rio-website/assets/vendor/jquery/jquery-3.6.4.min.js"></script>--}}
 <script src="{{ asset('/') }}rio-website/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="{{ asset('/') }}rio-website/assets/vendor/aos/aos.js"></script>
 <script src="{{ asset('/') }}rio-website/assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -435,5 +439,8 @@
         document.body.appendChild(css);
     };
 </script>
+
+@yield('script')
+
 </body>
 </html>
