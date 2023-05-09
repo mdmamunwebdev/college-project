@@ -7,8 +7,8 @@
     <title>Restaurant In Online - @yield('title') </title>
 
     <!-- Favicons -->
-    <link href="{{ asset('/') }}rio-website/assets/image/favicon.png" rel="icon">
-    <link href="{{ asset('/') }}rio-website/assets/image/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="" rel="icon">
+    <link href="" rel="apple-touch-icon">
 
     <!-- Jquery js -->
     <script src="{{ asset('/') }}rio-website/assets/vendor/jquery/jquery-3.6.4.min.js"></script>

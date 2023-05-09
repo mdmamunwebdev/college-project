@@ -9,7 +9,6 @@
         <li><a href="{{ route('home') }}" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="{{ route('our-foods') }}">Menu</a></li>
-        <li><a href="#events">Events</a></li>
         <li><a href="#chefs">Chefs</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -23,7 +22,7 @@
             <div class="row neumorphism p-5">
                 <div class="col-md-12">
                     <h1>
-                        <a href="" class="typewrite" data-period="2000" data-type='[ "Hi, Im Si.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>
+                        <a href="" class="typewrite" data-period="2000" data-type='[ "Hi, Im Abdullah Al Mamun.", "I am Creative.", "I Love Foods.", "I Love to Cooking." ]'>
                             <span class="wrap"></span>
                         </a>
                     </h1>
@@ -35,7 +34,7 @@
                     <p data-aos="fade-up" data-aos-delay="100">Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</p>
                     <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
                         <a href="#book-a-table" class="btn-book-a-table">Book a Table</a>
-                        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                        <a href="https://www.youtube.com/watch?v=Lx0wy2-N2bg" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
                     </div>
                 </div>
                 <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start numorphism rounded-circle">

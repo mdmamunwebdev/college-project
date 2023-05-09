@@ -9,7 +9,6 @@
         <li><a href="{{ route('home') }}">Home</a></li>
         <li><a href="{{ route('our-foods') }}" class="active">Menu</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#events">Events</a></li>
         <li><a href="#chefs">Chefs</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -26,7 +25,7 @@
 
                 <div class="section-header">
                     <h2>Our Menu</h2>
-                    <p>Check Our <span>Yummy Menu</span></p>
+                    <p>Check Out Our <span>Delicious Menu</span></p>
                 </div>
 
                 <ul class="nav nav-tabs d-flex justify-content-center neumo-active" data-aos="fade-up" data-aos-delay="200">
@@ -218,28 +217,7 @@
 @section('script')
 
     <script>
-        // $(document).ready(function() {
-        //     $('#cartForm').submit(function(event) {
-        //         // Stop the form from submitting normally
-        //         event.preventDefault();
         //
-        //         // Serialize the form data
-        //         let formData = $('#cartForm').serialize();
-        //
-        //         // Submit the form data using AJAX
-        //         $.ajax({
-        //             type: 'GET',
-        //             url: '/cart/add',
-        //             data: formData,
-        //             success: function(response) {
-        //                 alert('Form submitted successfully!');
-        //             },
-        //             error: function(xhr, status, error) {
-        //                 alert('Error submitting form: ' + error);
-        //             }
-        //         });
-        //     });
-        // });
     </script>
 
 @endsection
