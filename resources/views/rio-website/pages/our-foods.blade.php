@@ -70,14 +70,14 @@
                                                     <div class="btn btn-sm price neumo-foods-price-btn w-50 m-auto">
                                                         <strike style="color: black">&dollar;{{ $products->product->regular_price }} </strike>
                                                             <?php
-                                                            $date1 = date_create($products->product->start_sale_price_date);
-                                                            $date2 = date_create($products->product->end_sale_price_date);
-                                                            $diff  = date_diff($date1, $date2);
-//                                                        echo $diff->format("%R%a days");
+                                                                $date1 = date_create($products->product->start_sale_price_date);
+                                                                $date2 = date_create($products->product->end_sale_price_date);
+                                                                $diff  = date_diff($date1, $date2);
+                                                                // echo $diff->format("%R%a days");
                                                             ?>
                                                         / ${{ $products->product->sale_price }}
                                                     </div>
-                                                    <form id="cartForm-{{ $products->product->id }}-{{ $category->id }}" method="get">
+                                                    <form action="{{ route('cart.add') }}"  id="cartForm-{{ $products->product->id }}-{{ $category->id }}" method="get">
 
                                                         <div class="row g-2 mt-2">
                                                             <div class="col-md-3 mt-2">
@@ -98,30 +98,30 @@
                                             </div><!-- Menu Item -->
 
                                             <script>
-                                                $(document).ready(function() {
-                                                    $("#cartForm-{{ $products->product->id }}-{{ $category->id }}").submit(function(event) {
-                                                        // Stop the form from submitting normally
-                                                        event.preventDefault();
+                                                {{--$(document).ready(function() {--}}
+                                                {{--    $("#cartForm-{{ $products->product->id }}-{{ $category->id }}").submit(function(event) {--}}
+                                                {{--        // Stop the form from submitting normally--}}
+                                                {{--        event.preventDefault();--}}
 
-                                                        // Serialize the form data
-                                                        let formData = $("#cartForm-{{ $products->product->id }}-{{ $category->id }}").serialize();
+                                                {{--        // Serialize the form data--}}
+                                                {{--        let formData = $("#cartForm-{{ $products->product->id }}-{{ $category->id }}").serialize();--}}
 
-                                                        // Submit the form data using AJAX
-                                                        $.ajax({
-                                                            type: 'GET',
-                                                            url: '/cart/add',
-                                                            data: formData,
-                                                            success: function(response) {
+                                                {{--        // Submit the form data using AJAX--}}
+                                                {{--        $.ajax({--}}
+                                                {{--            type: 'GET',--}}
+                                                {{--            url: '/cart/add',--}}
+                                                {{--            data: formData,--}}
+                                                {{--            success: function(response) {--}}
 
-                                                                    alert(response);
+                                                {{--                    alert(response);--}}
 
-                                                            },
-                                                            error: function(xhr, status, error) {
-                                                                alert('Error submitting form: ' + error);
-                                                            }
-                                                        });
-                                                    });
-                                                });
+                                                {{--            },--}}
+                                                {{--            error: function(xhr, status, error) {--}}
+                                                {{--                alert('Error submitting form: ' + error);--}}
+                                                {{--            }--}}
+                                                {{--        });--}}
+                                                {{--    });--}}
+                                                {{--});--}}
                                             </script>
                                         @endforeach
                                 </div>
@@ -145,14 +145,14 @@
                                                 <div class="btn btn-sm price neumo-foods-price-btn w-50 m-auto">
                                                     <strike style="color: black">&dollar;{{ $products->product->regular_price }} </strike>
                                                         <?php
-                                                        $date1 = date_create($products->product->start_sale_price_date);
-                                                        $date2 = date_create($products->product->end_sale_price_date);
-                                                        $diff  = date_diff($date1, $date2);
-//                                                        echo $diff->format("%R%a days");
+                                                            $date1 = date_create($products->product->start_sale_price_date);
+                                                            $date2 = date_create($products->product->end_sale_price_date);
+                                                            $diff  = date_diff($date1, $date2);
+                                                            //  echo $diff->format("%R%a days");
                                                         ?>
                                                     / ${{ $products->product->sale_price }}
                                                 </div>
-                                                <form id="cartForm-{{ $products->product->id }}-{{ $category->id }}" method="get">
+                                                <form action="{{ route('cart.add') }}" id="cartForm-{{ $products->product->id }}-{{ $category->id }}" method="get">
 
                                                     <div class="row g-2 mt-2">
                                                         <div class="col-md-3 mt-2">
@@ -173,30 +173,30 @@
                                         </div><!-- Menu Item -->
 
                                         <script>
-                                            $(document).ready(function() {
-                                                $("#cartForm-{{ $products->product->id }}-{{ $category->id }}").submit(function(event) {
-                                                    // Stop the form from submitting normally
-                                                    event.preventDefault();
+                                            {{--$(document).ready(function() {--}}
+                                            {{--    $("#cartForm-{{ $products->product->id }}-{{ $category->id }}").submit(function(event) {--}}
+                                            {{--        // Stop the form from submitting normally--}}
+                                            {{--        event.preventDefault();--}}
 
-                                                    // Serialize the form data
-                                                    let formData = $("#cartForm-{{ $products->product->id }}-{{ $category->id }}").serialize();
+                                            {{--        // Serialize the form data--}}
+                                            {{--        let formData = $("#cartForm-{{ $products->product->id }}-{{ $category->id }}").serialize();--}}
 
-                                                    // Submit the form data using AJAX
-                                                    $.ajax({
-                                                        type: 'GET',
-                                                        url: '/cart/add',
-                                                        data: formData,
-                                                        success: function(response) {
+                                            {{--        // Submit the form data using AJAX--}}
+                                            {{--        $.ajax({--}}
+                                            {{--            type: 'GET',--}}
+                                            {{--            url: '/cart/add',--}}
+                                            {{--            data: formData,--}}
+                                            {{--            success: function(response) {--}}
 
-                                                                alert(response);
+                                            {{--                    alert(response);--}}
 
-                                                        },
-                                                        error: function(xhr, status, error) {
-                                                            alert('Error submitting form: ' + error);
-                                                        }
-                                                    });
-                                                });
-                                            });
+                                            {{--            },--}}
+                                            {{--            error: function(xhr, status, error) {--}}
+                                            {{--                alert('Error submitting form: ' + error);--}}
+                                            {{--            }--}}
+                                            {{--        });--}}
+                                            {{--    });--}}
+                                            {{--});--}}
                                         </script>
                                     @endforeach
                                 </div>

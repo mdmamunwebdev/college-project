@@ -183,7 +183,7 @@
                 </div>
                 <div class="col-md-7 col-lg-8">
                     <h4 class="mb-3">Billing address</h4>
-                    <form class="needs-validationn" novalidate action="{{ url('/pay') }}"  method="POST">
+                    <form class="needs-validation" novalidate action="{{ route('order.place') }}"  method="post">
                         @csrf
 
                         <input type="hidden" class="form-control" id='amount' name="amount" placeholder="" value="{{  $total }}" required/>
@@ -191,7 +191,7 @@
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <label for="cus_firstName" class="form-label">First name</label>
-                                <input type="text" class="form-control" id="cus_firstName" name="cus_firstName" placeholder=""   />
+                                <input type="text" class="form-control" id="cus_firstName" name="cus_firstName" placeholder=""  required />
                                 <div class="invalid-feedback">
                                     Valid first name is required.
                                 </div>
@@ -199,7 +199,7 @@
 
                             <div class="col-sm-6">
                                 <label for="cus_lastName" class="form-label">Last name</label>
-                                <input type="text" class="form-control" id="cus_lastName" name="cus_lastName" placeholder=""  />
+                                <input type="text" class="form-control" id="cus_lastName" name="cus_lastName" placeholder="" required />
                                 <div class="invalid-feedback">
                                     Valid last name is required.
                                 </div>
@@ -209,7 +209,7 @@
                                 <label for="cus_username" class="form-label">Username</label>
                                 <div class="input-group has-validation">
                                     <span class="input-group-text">@</span>
-                                    <input type="text" class="form-control" id="cus_username" name="cus_username" placeholder="Username"  >
+                                    <input type="text" class="form-control" id="cus_username" name="cus_username" placeholder="Username"  required>
                                     <div class="invalid-feedback">
                                         Your username is required.
                                     </div>
@@ -217,27 +217,27 @@
                             </div>
 
                             <div class="col-sm-6">
-                                <label for="cus_email" class="form-label">Email <sup class="text-danger">*</sup></label>
-                                <input type="text" class="form-control" id="cus_email" name="cus_email" placeholder="you@example.com"  >
-                                <div class="invalid-feedback {{$errors->has('cus_email') ? 'd-block' : ''}}">
-                                    <span class="text-danger">{{$errors->has('cus_email') ? $errors->first('cus_email') : ''}}</span>
+                                <label for="cus_email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="cus_email" name="cus_email" placeholder="you@example.com"  required>
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address for shipping updates
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
-                                <label for="cus_phone" class="form-label">Phone <sup class="text-danger">*</sup></label>
+                                <label for="cus_phone" class="form-label">Phone</label>
                                 <div class="input-group has-validation">
                                     <span class="input-group-text">+88</span>
-                                    <input type="text" class="form-control" id="cus_phone" name="cus_phone" placeholder="01710000000" />
-                                    <div class="invalid-feedback {{$errors->has('cus_phone') ? 'd-block' : ''}}">
-                                        <span class="text-danger">{{$errors->has('cus_phone') ? $errors->first('cus_phone') : ''}}</span>
+                                    <input type="text" class="form-control" id="cus_phone" name="cus_phone" placeholder="01710000000" required/>
+                                    <div class="invalid-feedback">
+                                        Please enter a valid phone number for shipping updates
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-12">
                                 <label for="cus_address" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="cus_address" name="cus_address" placeholder="1234 Main St"  />
+                                <input type="text" class="form-control" id="cus_address" name="cus_address" placeholder="1234 Main St"  required/>
                                 <div class="invalid-feedback">
                                     Please enter your billing address.
                                 </div>
@@ -250,7 +250,7 @@
 
                             <div class="col-md-5">
                                 <label for="cus_country" class="form-label">Country</label>
-                                <select class="form-select" id="cus_country" name="cus_country" >
+                                <select class="form-select" id="cus_country" name="cus_country" required>
                                     <option disabled>Choose...</option>
                                     <option value="0" selected>Bangladesh</option>
                                 </select>
@@ -261,7 +261,7 @@
 
                             <div class="col-md-4">
                                 <label for="cus_state" class="form-label">State</label>
-                                <select class="form-select" id="cus_state" name="cus_state" >
+                                <select class="form-select" id="cus_state" name="cus_state" required>
                                     <option disabled >Choose...</option>
                                     <option value="0" selected>Rangpur</option>
                                     <option value="1" >Dhaka</option>
@@ -276,7 +276,7 @@
 
                             <div class="col-md-3">
                                 <label for="cus_zip" class="form-label">Zip</label>
-                                <input type="text" class="form-control" id="cus_zip" name="cus_zip" placeholder="" >
+                                <input type="text" class="form-control" id="cus_zip" name="cus_zip" placeholder="" required>
                                 <div class="invalid-feedback">
                                     Zip code required.
                                 </div>
@@ -310,27 +310,27 @@
                                 </div>
 
                                 <div class="col-sm-6">
-                                    <label for="ship_email" class="form-label">Email <sup class="text-danger">*</sup></label>
-                                    <input type="text" class="form-control" id="ship_email" name="ship_email" placeholder="you@example.com" />
-                                    <div class="invalid-feedback {{$errors->has('ship_email') ? 'd-block' : ''}}">
-                                        <span class="text-danger">{{$errors->has('ship_email') ? $errors->first('ship_email') : ''}}</span>
+                                    <label for="ship_email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="ship_email" name="ship_email" placeholder="you@example.com" required/>
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address for shipping updates
                                     </div>
                                 </div>
 
                                 <div class="col-sm-6">
-                                    <label for="ship_phone" class="form-label">Phone <sup class="text-danger">*</sup></label>
+                                    <label for="ship_phone" class="form-label">Phone</label>
                                     <div class="input-group has-validation">
                                         <span class="input-group-text">+88</span>
-                                        <input type="text" class="form-control" id="ship_phone" name="ship_phone" placeholder="01710000000" />
-                                        <div class="invalid-feedback {{$errors->has('ship_phone') ? 'd-block' : ''}}">
-                                            <span class="text-danger">{{$errors->has('ship_phone') ? $errors->first('ship_phone') : ''}}</span>
+                                        <input type="text" class="form-control" id="ship_phone" name="ship_phone" placeholder="01710000000" required/>
+                                        <div class="invalid-feedback">
+                                            Please enter a valid phone number for shipping updates
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <label for="ship_address" class="form-label">Address</label>
-                                    <input type="text" class="form-control" id="ship_address" name="ship_address" placeholder="1234 Main St"  />
+                                    <input type="text" class="form-control" id="ship_address" name="ship_address" placeholder="1234 Main St"  required/>
                                     <div class="invalid-feedback">
                                         Please enter your shipping address.
                                     </div>
@@ -410,6 +410,12 @@
 
                         <hr class="my-4">
 
+                        <button class="btn btn-primary btn-lg btn-block d-none" id="sslczPayBtn"
+                                token="if you have any token validation"
+                                postdata="your javascript arrays or objects which requires in backend"
+                                order="If you already have the transaction generated for current order"
+                                endpoint="{{ url('/pay-via-ajax') }}"> Pay Now
+                        </button>
                         <button id="placeOrder" class="btn btn-primary btn-lg btn-block" style="font-size: 12px;" type="submit">Place Order</button>
                     </form>
                 </div>
@@ -419,14 +425,136 @@
 @endsection
 
 @section('script')
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+        function shippingAddress() {
+
+            let checkBox = document.getElementById("same-address");
+            let s_email = document.getElementById("s_email");
+            let s_phone = document.getElementById("s_phone");
+            let s_address = document.getElementById("s_address");
+
+            if (checkBox.checked === true){
+                s_email.required = false;
+                s_phone.required = false;
+                s_address.required = false;
+
+            } else {
+                s_email.required = true;
+                s_phone.required = true;
+                s_address.required = true;
+            }
+        }
+
+
+        // SSLCMZ payment integration
+
+        var obj = {};
+        obj.cus_firstName = $('#cus_firstName').val();
+        obj.cus_lastName = $('#cus_lastName').val();
+        obj.cus_username = $('#cus_username').val();
+        obj.cus_phone = $('#cus_phone').val();
+        obj.cus_email = $('#cus_email').val();
+        obj.cus_country = $('#cus_country').val();
+        obj.cus_state = $('#cus_state').val();
+        obj.cus_zip = $('#cus_zip').val();
+        obj.cus_addr1 = $('#cus_address').val();
+        obj.cus_addr2 = $('#cus_address2').val();
+
+        $('#cus_firstName, #cus_lastName, #cus_username, #cus_phone, #cus_email, #cus_country, #cus_state, #cus_zip, #cus_address, #cus_address2').change(function () {
+
+            obj.cus_firstName = $('#cus_firstName').val();
+            obj.cus_lastName = $('#cus_lastName').val();
+            obj.cus_username = $('#cus_username').val();
+            obj.cus_phone = $('#cus_phone').val();
+            obj.cus_email = $('#cus_email').val();
+            obj.cus_country = $('#cus_country').val();
+            obj.cus_state = $('#cus_state').val();
+            obj.cus_zip = $('#cus_zip').val();
+            obj.cus_addr1 = $('#cus_address').val();
+            obj.cus_addr2 = $('#cus_address2').val();
+
+        });
+
+        obj.amount = $('#amount').val();
+        $('#amount').change(function() {
+            obj.amount = $('#amount').val();
+        });
+
+        obj.same_addr = $('#same-address').val();
+        $('#same_addr').click(function() {
+            obj.same_addr = $('#same-address').val();
+        });
+
+        var paymentMethod = document.querySelector('input[name = paymentMethod]:checked').value;
+        obj.pay_method = paymentMethod;
+
+        obj.ship_firstName = $('#ship_firstName').val();
+        obj.ship_lastName = $('#ship_lastName').val();
+        obj.ship_phone = $('#ship_phone').val();
+        obj.ship_email = $('#ship_email').val();
+        obj.ship_country = $('#ship_country').val();
+        obj.ship_state = $('#ship_state').val();
+        obj.ship_zip = $('#ship_zip').val();
+        obj.ship_addr1 = $('#ship_address').val();
+        obj.ship_addr2 = $('#ship_address2').val();
+        obj.ship_method = $('#ship_method').val();
+
+        $('#ship_firstName, #ship_lastName, #ship_phone, #ship_email, #ship_country, #ship_state, #ship_zip, #ship_address, #ship_address2, #ship_method').change(function () {
+
+            obj.ship_firstName = $('#ship_firstName').val();
+            obj.ship_lastName = $('#ship_lastName').val();
+            obj.ship_phone = $('#ship_phone').val();
+            obj.ship_email = $('#ship_email').val();
+            obj.ship_country = $('#ship_country').val();
+            obj.ship_state = $('#ship_state').val();
+            obj.ship_zip = $('#ship_zip').val();
+            obj.ship_addr1 = $('#ship_address').val();
+            obj.ship_addr2 = $('#ship_address2').val();
+            obj.ship_method = $('#ship_method').val();
+
+        });
+
+
+        $('#sslczPayBtn').prop('postdata', obj);
+
+        (function (window, document) {
+            var loader = function () {
+                var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+                // script.src = "https://seamless-epay.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7); // USE THIS FOR LIVE
+                script.src = "https://sandbox.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7); // USE THIS FOR SANDBOX
+                tag.parentNode.insertBefore(script, tag);
+            };
+
+            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+        })(window, document);
+
+        // SSLCMZ payment integration end
+
+        $('#bkash, #rocket, #nagad, #cashOn').click(function () {
+
+            var paymentMethod = document.querySelector('input[name = paymentMethod]:checked').value;
+            obj.pay_method = paymentMethod;
+
+            if(paymentMethod == 0) {
+                document.getElementById('sslczPayBtn').style.setProperty("display", "block", "important");
+                document.getElementById('placeOrder').style.display = 'none';
+            }
+            else if(paymentMethod == 1) {
+                document.getElementById('sslczPayBtn').style.setProperty("display", "block", "important");
+                document.getElementById('placeOrder').style.display = 'none';
+            }
+            else if(paymentMethod == 2) {
+                document.getElementById('sslczPayBtn').style.setProperty("display", "block", "important");
+                document.getElementById('placeOrder').style.display = 'none';
+            }
+            else {
+                document.getElementById('sslczPayBtn').style.setProperty("display", "none", "important");
+                document.getElementById('placeOrder').style.display = 'block';
+            }
+
+        })
+
+    </script>
 @endsection
 

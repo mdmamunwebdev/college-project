@@ -2,8 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\SslCommerzPaymentController;
+
 use App\Http\Controllers\rioWebsite\PagesController;
 use App\Http\Controllers\rioWebsite\CartController;
+use App\Http\Controllers\rioWebsite\OrderPlaceController;
 
 use App\Http\Controllers\rioAdmin\DashboardController;
 use App\Http\Controllers\rioAdmin\ProductController;
@@ -19,16 +22,39 @@ use App\Http\Controllers\TagController;
 */
 
 Route::get('/', [PagesController::class, 'index'])->name('home');
+Route::get('/our-foods', [PagesController::class, 'ourFoods'])->name('our-foods');
+Route::get('/checkout', [PagesController::class, 'checkout'])->name('checkout');
+Route::get('/cart/add', [CartController::class, 'addCart'])->name('cart.add');
+Route::post('/order/place', [OrderPlaceController::class, 'orderPlace'])->name('order.place');
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes END
+|--------------------------------------------------------------------------
+*/
+
+
+// SSLCOMMERZ Start
+Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+
+Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
+Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+
+Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+//SSLCOMMERZ END
+
+
 
 /*
 |--------------------------------------------------------------------------
 | Admin Routes
 |--------------------------------------------------------------------------
 */
-
-Route::get('/our-foods', [PagesController::class, 'ourFoods'])->name('our-foods');
-Route::get('/checkout', [PagesController::class, 'checkout'])->name('checkout');
-Route::get('/cart/add', [CartController::class, 'addCart'])->name('cart.add');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
 
@@ -90,6 +116,11 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/order/status/{id}', [OrderController::class, 'status'])->name('order.status');
     /**************************************** Order Routes End *****************************************/
 
-
-
 });
+
+/*
+|--------------------------------------------------------------------------
+| Admin Routes END
+|--------------------------------------------------------------------------
+*/
+

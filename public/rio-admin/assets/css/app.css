@@ -169,6 +169,12 @@ body {
     /*border: none;*/
 }
 
+.note-modal-content {
+    background-color: var(--neumo-bg-color) !important;
+    padding: 12px;
+    border: none;
+}
+
 
 /* ***********************************************************************************************************
  # Nav Pills

@@ -64,6 +64,62 @@
                     <li class="nav-item dropdown pe-3">
                         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
                            data-bs-toggle="dropdown"> <i
+                                class="bi bi-chat-left-text rounded-circle neumo-primary py-1 px-2 border-neumo"></i>
+                            <span class="badge bg-success badge-number">3</span> </a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages neumo-primary">
+                            <li class="dropdown-header"> You have 3 new messages <a href="#"><span
+                                        class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="message-item">
+                                <a href="#">
+                                    <img src="{{ asset('/') }}rio-admin/assets/img/messages-1.jpg" alt=""
+                                         class="rounded-circle">
+                                    <div>
+                                        <h4>Jassa</h4>
+                                        <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                        <p>4 hrs. ago</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="message-item">
+                                <a href="#">
+                                    <img src="{{ asset('/') }}rio-admin/assets/img/messages-2.jpg" alt=""
+                                         class="rounded-circle">
+                                    <div>
+                                        <h4>Jassa</h4>
+                                        <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                        <p>6 hrs. ago</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="message-item">
+                                <a href="#">
+                                    <img src="{{ asset('/') }}rio-admin/assets/img/messages-3.jpg" alt=""
+                                         class="rounded-circle">
+                                    <div>
+                                        <h4>Jassa</h4>
+                                        <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                        <p>8 hrs. ago</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="dropdown-footer"><a href="#">Show all messages</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown pe-3">
+                        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
+                           data-bs-toggle="dropdown"> <i
                                 class="bi bi-bell rounded-circle neumo-primary py-1 px-2 border-neumo"></i>
                             <span class="badge bg-primary badge-number">4</span> </a>
                         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications neumo-primary">
@@ -170,7 +226,7 @@
 
         @yield('main-content')
 
-        <footer id="footer" class="footer footer-extra neumo-primary my-2">
+        <footer id="footer" class="footer footer-extra  neumo-primary my-2">
             <div class="copyright text-neumo">
                 <script>document.write(new Date().getFullYear())</script> &copy; Copyright
                 <strong><span>Compnay Name </span></strong> RIO. All Rights Reserved
@@ -213,14 +269,27 @@
     AOS.init();
 
     /************************************* Footer ************************************/
+
     const mainSectionClientHeight = document.getElementById('mainSection').clientHeight;
     const mainSectionScrollHeight = document.getElementById('mainSection').scrollHeight;
-
-    console.log('Client Height = '+mainSectionClientHeight+' Scroll height = '+mainSectionScrollHeight);
 
     if( mainSectionClientHeight < mainSectionScrollHeight ) {
         document.getElementById('footer').classList.remove("footer-extra");
     }
+
+    setInterval(footer, 500);
+
+    function footer() {
+        const mainSectionClientHeight = document.getElementById('mainSection').clientHeight;
+        const mainSectionScrollHeight = document.getElementById('mainSection').scrollHeight;
+
+        // console.log('Client Height = '+mainSectionClientHeight+' Scroll height = '+mainSectionScrollHeight);
+
+        if( mainSectionClientHeight === mainSectionScrollHeight ) {
+            document.getElementById('footer').classList.add("footer-extra");
+        }
+    }
+
     /************************************* Footer End ************************************/
 
 </script>

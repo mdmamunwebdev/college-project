@@ -19,6 +19,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Using view composer to set following variables globally
+        view()->composer('*',function($view) {
+            $view->with('total', 0);
+        });
     }
 }
