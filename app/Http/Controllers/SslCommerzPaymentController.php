@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 //use DB;
+use App\Models\rioWebsite\OrderedProduct;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
@@ -10,6 +11,7 @@ use App\Models\rioAdmin\Order;
 
 class SslCommerzPaymentController extends Controller
 {
+    private $order;
 
     public function exampleEasyCheckout()
     {
@@ -65,8 +67,11 @@ class SslCommerzPaymentController extends Controller
         }
 
         if ( $request->paymentMethod == 3 ) {
-            Order::newOrder($request);
-            redirect()->back();
+
+            $this->order = Order::newOrder($request);
+            OrderedProduct::orderedProduct($this->order, $request);
+
+            return redirect()->back();
         }
         else {
             $post_data = array();

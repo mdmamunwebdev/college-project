@@ -248,7 +248,7 @@
                                 <input type="text" class="form-control" id="cus_address2" name="cus_address2" placeholder="Apartment or suite" />
                             </div>
 
-                            <div class="col-md-5">
+                            <div class="col-md-3">
                                 <label for="cus_country" class="form-label">Country</label>
                                 <select class="form-select" id="cus_country" name="cus_country" >
                                     <option disabled>Choose...</option>
@@ -259,7 +259,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <label for="cus_state" class="form-label">State</label>
                                 <select class="form-select" id="cus_state" name="cus_state" >
                                     <option disabled >Choose...</option>
@@ -274,13 +274,26 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <label for="cus_zip" class="form-label">Zip</label>
                                 <input type="text" class="form-control" id="cus_zip" name="cus_zip" placeholder="" >
                                 <div class="invalid-feedback">
                                     Zip code required.
                                 </div>
                             </div>
+
+                            <div class="col-md-4">
+                                <label for="ship_method" class="form-label">Shipping Type</label>
+                                <select class="form-select" id="ship_method" name="ship_method">
+                                    <option disabled>Choose...</option>
+                                    <option  value="0" selected>Home Delivery</option>
+                                    <option  value="1" >Shop Delivery</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid state.
+                                </div>
+                            </div>
+
                         </div>
 
                         <hr class="my-4">
@@ -341,7 +354,7 @@
                                     <input type="text" class="form-control" id="ship_address2" name="ship_address2" placeholder="Apartment or suite" />
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-5">
                                     <label for="ship_country" class="form-label">Country</label>
                                     <select class="form-select" id="ship_country" name="ship_country"  disabled>
                                         <option>Choose...</option>
@@ -352,7 +365,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <label for="ship_state" class="form-label">State</label>
                                     <select class="form-select" id="ship_state" name="ship_state"  disabled>
                                         <option>Choose...</option>
@@ -363,19 +376,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
-                                    <label for="ship_method" class="form-label">Shipping Type</label>
-                                    <select class="form-select" id="ship_method" name="ship_method">
-                                        <option disabled>Choose...</option>
-                                        <option  value="0" selected>Home Delivery</option>
-                                        <option  value="1" >Shop Delivery</option>
-                                    </select>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid state.
-                                    </div>
-                                </div>
-
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                     <label for="ship_zip" class="form-label">Zip</label>
                                     <input type="text" class="form-control" id="ship_zip" name="ship_zip" placeholder="" />
                                     <div class="invalid-feedback">

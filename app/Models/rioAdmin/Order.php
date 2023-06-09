@@ -20,7 +20,7 @@ class Order extends Model
         self::$order->cus_country  = $req->cus_country;
         self::$order->cus_zip  = $req->cus_zip;
         self::$order->cus_state  = $req->cus_state;
-        self::$order->cus_userName  = ($req->cus_firstName.$req->cus_lastName);
+        self::$order->cus_userName  = $req->cus_username;
         self::$order->name  =$req->cus_firstName;
         self::$order->email  = $req->email;
         self::$order->phone  = $req->phone;
@@ -45,12 +45,14 @@ class Order extends Model
         self::$order->ship_method  = $req->ship_method;
         self::$order->transaction_id  = uniqid();
         self::$order->currency  = 'BDT';
-        self::$order->same_address  = $req->same_address;
+
+//      self::$order->same_address  = $req->same_address;
+//      self::$order->user_ip  = $req->ip();
 
         self::$order->save();
 
         return self::$order;
 
-
     }
+
 }
