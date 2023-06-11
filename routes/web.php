@@ -8,6 +8,9 @@ use App\Http\Controllers\rioWebsite\PagesController;
 use App\Http\Controllers\rioWebsite\CartController;
 use App\Http\Controllers\rioWebsite\OrderPlaceController;
 
+use App\Http\Controllers\rioWebsite\CustomerController;
+use App\Http\Controllers\rioWebsite\CustomerAuthController;
+
 use App\Http\Controllers\rioAdmin\DashboardController;
 use App\Http\Controllers\rioAdmin\ProductController;
 use App\Http\Controllers\rioAdmin\CategoryController;
@@ -17,7 +20,7 @@ use App\Http\Controllers\TagController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes Start
 |--------------------------------------------------------------------------
 */
 
@@ -34,25 +37,27 @@ Route::post('/order/place', [OrderPlaceController::class, 'orderPlace'])->name('
 */
 
 
-// SSLCOMMERZ Start
-Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
-Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+/*
+|--------------------------------------------------------------------------
+| Customer Routes Start
+|--------------------------------------------------------------------------
+*/
 
-Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
-Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+Route::middleware(['customer'])->group(function () {
+    Route::get('customer/dashboard', [CustomerAuthController::class, 'dashboard'])->name('customer.dashboard');
+    Route::get('customer/logout', [CustomerAuthController::class, 'logout'])->name('customer.logout');
+});
 
-Route::post('/success', [SslCommerzPaymentController::class, 'success']);
-Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
-Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
-
-Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
-//SSLCOMMERZ END
-
+/*
+|--------------------------------------------------------------------------
+| Customer Routes END
+|--------------------------------------------------------------------------
+*/
 
 
 /*
 |--------------------------------------------------------------------------
-| Admin Routes
+| Admin Routes Start
 |--------------------------------------------------------------------------
 */
 
@@ -121,6 +126,31 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 /*
 |--------------------------------------------------------------------------
 | Admin Routes END
+|--------------------------------------------------------------------------
+*/
+
+
+/*
+|--------------------------------------------------------------------------
+| SSLCOMMERZ  Routes Start
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+
+Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
+Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+
+Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+
+/*
+|--------------------------------------------------------------------------
+| SSLCOMMERZ  Routes END
 |--------------------------------------------------------------------------
 */
 

@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
 use App\Models\rioAdmin\Order;
+use App\Models\rioWebsite\Customer;
+use Session;
 
 class SslCommerzPaymentController extends Controller
 {
@@ -71,9 +73,30 @@ class SslCommerzPaymentController extends Controller
             $this->order = Order::newOrder($request);
             OrderedProduct::orderedProduct($this->order, $request);
 
+//            $customer = Customer::where('email', $request->email)->first();
+//
+//            if ( $customer ) {
+//
+//                Session::put('customer_id', $customer->id);
+//                Session::put('customer_email', $customer->email);
+//
+//                return redirect('customer/dashboard');
+//            }
+//            else {
+//
+//                $customer = Customer::newCustomer($request);
+//
+//                Session::put('customer_id', $customer->id);
+//                Session::put('customer_email', $customer->email);
+//
+//                return redirect('customer/dashboard');
+//
+//            }
+
             return redirect()->back();
         }
         else {
+
             $post_data = array();
             $post_data['total_amount'] = '10'; # You cant not pay less than 10
             $post_data['currency'] = "BDT";
@@ -134,6 +157,7 @@ class SslCommerzPaymentController extends Controller
                 print_r($payment_options);
                 $payment_options = array();
             }
+
         }
     }
 
@@ -247,7 +271,7 @@ class SslCommerzPaymentController extends Controller
             }
         } else if ($order_details->status == 'Processing' || $order_details->status == 'Complete') {
             /*
-             That means through IPN Order status already updated. Now you can just show the customer that transaction is completed. No need to udate database.
+             That means through IPN Order status already updated. Now you can just show the customer that transaction is completed. No need to update database.
              */
             echo "Transaction is successfully Completed";
         } else {
