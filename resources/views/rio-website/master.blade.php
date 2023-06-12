@@ -55,7 +55,8 @@
 
             <button type="button" class="btn btn-sm border-1 border-danger position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                 <i class="bi bi-cart4" style="font-size: 20px;"></i>
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">99+
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    99+
                     <span class="visually-hidden">unread messages</span>
                 </span>
             </button>

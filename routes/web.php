@@ -24,6 +24,8 @@ use App\Http\Controllers\TagController;
 |--------------------------------------------------------------------------
 */
 
+Route::get('/order-success/{id}', [PagesController::class, 'success'])->name('success');
+
 Route::get('/', [PagesController::class, 'index'])->name('home');
 Route::get('/our-foods', [PagesController::class, 'ourFoods'])->name('our-foods');
 Route::get('/checkout', [PagesController::class, 'checkout'])->name('checkout');
@@ -43,9 +45,14 @@ Route::post('/order/place', [OrderPlaceController::class, 'orderPlace'])->name('
 |--------------------------------------------------------------------------
 */
 
+Route::get('customer/login', [CustomerAuthController::class, 'login'])->name('customer.login');
+Route::post('customer/login', [CustomerAuthController::class, 'loginValid'])->name('customer.login');
+Route::get('customer/register', [CustomerAuthController::class, 'register'])->name('customer.register');
+Route::post('customer/register', [CustomerAuthController::class, 'registration'])->name('customer.register');
+
 Route::middleware(['customer'])->group(function () {
-    Route::get('customer/dashboard', [CustomerAuthController::class, 'dashboard'])->name('customer.dashboard');
-    Route::get('customer/logout', [CustomerAuthController::class, 'logout'])->name('customer.logout');
+    Route::get('/customer/dashboard', [CustomerAuthController::class, 'index'])->name('customer.dashboard');
+    Route::get('/customer/logout', [CustomerAuthController::class, 'logout'])->name('customer.logout');
 });
 
 /*

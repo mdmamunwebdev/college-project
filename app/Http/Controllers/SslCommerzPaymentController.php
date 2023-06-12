@@ -73,27 +73,8 @@ class SslCommerzPaymentController extends Controller
             $this->order = Order::newOrder($request);
             OrderedProduct::orderedProduct($this->order, $request);
 
-//            $customer = Customer::where('email', $request->email)->first();
-//
-//            if ( $customer ) {
-//
-//                Session::put('customer_id', $customer->id);
-//                Session::put('customer_email', $customer->email);
-//
-//                return redirect('customer/dashboard');
-//            }
-//            else {
-//
-//                $customer = Customer::newCustomer($request);
-//
-//                Session::put('customer_id', $customer->id);
-//                Session::put('customer_email', $customer->email);
-//
-//                return redirect('customer/dashboard');
-//
-//            }
+            return redirect('/order-success/'.$this->order->id);
 
-            return redirect()->back();
         }
         else {
 

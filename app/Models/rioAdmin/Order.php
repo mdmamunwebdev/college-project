@@ -22,10 +22,10 @@ class Order extends Model
         self::$order->cus_state  = $req->cus_state;
         self::$order->cus_userName  = $req->cus_username;
         self::$order->name  =$req->cus_firstName;
-        self::$order->email  = $req->email;
-        self::$order->phone  = $req->phone;
-        self::$order->address  = $req->address;
-        self::$order->address2  = $req->address2;
+        self::$order->email  = $req->cus_email;
+        self::$order->phone  = $req->cus_phone;
+        self::$order->address  = $req->cus_address;
+        self::$order->address2  = $req->cus_address2;
 
         self::$order->ship_firstName = $req->ship_firstName;
         self::$order->ship_lastName  = $req->ship_lastName;

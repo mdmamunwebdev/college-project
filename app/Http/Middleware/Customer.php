@@ -20,7 +20,7 @@ class Customer
             return $next($request);
         }
         else {
-            return redirect('/our-foods')->back();
+            return redirect('/customer/login');
         }
     }
 }
