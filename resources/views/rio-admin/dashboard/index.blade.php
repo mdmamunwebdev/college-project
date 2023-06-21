@@ -80,7 +80,7 @@
                 <li class="ln"><span class="link_name">Order</span></li>
                 <li class="d-flex justify-content-start p-0">
                     <i class='bx bx-list-plus' ></i>
-                    <a href="{{ route('order.create') }}">Order</a>
+                    <a href="{{ route('order.list') }}">Order</a>
                 </li> <!-- When active This link, then here is added a class (active-item) -->
             </ul>
         </li>

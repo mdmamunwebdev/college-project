@@ -128,6 +128,11 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/order/status/{id}', [OrderController::class, 'status'])->name('order.status');
     /**************************************** Order Routes End *****************************************/
 
+    Route::get('/order/category/{id}', [OrderController::class, 'productSearch'])->name('order.category');
+    Route::get('/order/product-add', [OrderController::class, 'productAdd'])->name('order.product-add');
+
+
+
 });
 
 /*

@@ -35,6 +35,8 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ asset('/') }}rio-admin/assets/css/app.css">
 
+    @yield('style')
+
 </head>
 <body>
 

@@ -80,7 +80,7 @@
                 <li class="ln"><span class="link_name">Order</span></li>
                 <li class="active-item d-flex justify-content-start p-0">
                     <i class='bx bx-list-plus' ></i>
-                    <a href="{{ route('order.create') }}">Order</a>
+                    <a href="{{ route('order.list') }}">Order</a>
                 </li> <!-- When active This link, then here is added a class (active-item) -->
             </ul>
         </li>
@@ -165,282 +165,103 @@
     </div>
 
     <section class="section dashboard">
-        <div class="container-fluid p-0">
-            <div class="row g-3">
-                <div class="col-md-8">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card card-body accordion neumo-primary text-primary-size" id="accordionOrderDetail">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header border-bottom border-1 border-light">
-                                        <button class="accordion-button px-0 bg-neumo text-neumo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Order #30 Detail
-                                        </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show px-0" data-bs-parent="#accordionOrderDetail">
-                                        <div class="accordion-body bg-neumo">
-                                            <h6>General</h6>
-                                            <div class="row mb-2">
-                                                <lable for="" class="col-12 mb-2">Date created:</lable>
-                                                <div class="col-12">
-                                                    <input type="date" name="published_date" id="DateCreated" class="p-1 w-100 h-100 neumo-primary border-neumo"/>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <lable for="" class="col-12 mb-2">Status:</lable>
-                                                <div class="col-12">
-                                                    <select name="" id="" class="form-select neumo-primary border-neumo text-primary-size">
-                                                        <option selected>-- select any one --</option>
-                                                        <option value="">Pending</option>
-                                                        <option value="">Pending</option>
-                                                        <option value="">Pending</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-2 g-3">
-                                                <div class="col-md-6">
-                                                    <h6 class="my-2">Billing</h6>
-                                                    <div class="card card-body p-2 neumo-primary">
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <div class="card card-body neumo-primary p-2">
+                    <table id="example" class="table table-hover table-striped text-primary-size" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>SL/NO</th>
+                            <th>Order No</th>
+                            <th>TxId</th>
+                            <th>Shipping Email</th>
+                            <th>Shipping Phone</th>
+                            <th>Pay Method</th>
+                            <th>Shipping Method</th>
+                            <th>Payment Status</th>
+                            <th>Order Status</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
-                                                        <div class="row mb-2 g-2">
-                                                            <div class="col-6">
-                                                                <div class="row">
-                                                                    <label for="" class="col-12">Name</label>
-                                                                    <div class="col-12">
-                                                                        <input type="text" name="" id="" class="form-control" style="font-size: 11px; padding: 8px;">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="row">
-                                                                    <label for="" class="col-12">Name</label>
-                                                                    <div class="col-12">
-                                                                        <input type="text" name="" id="" class="form-control" style="font-size: 11px; padding: 8px;">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-2">
-                                                            <div class="col-6">
-                                                                <div class="row">
-                                                                    <label for="" class="col-12">Name</label>
-                                                                    <div class="col-12">
-                                                                        <input type="text" name="" id="" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="row">
-                                                                    <label for="" class="col-12">Name</label>
-                                                                    <div class="col-12">
-                                                                        <input type="text" name="" id="" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-2">
-                                                            <div class="col-6">
-                                                                <div class="row">
-                                                                    <label for="" class="col-12">Name</label>
-                                                                    <div class="col-12">
-                                                                        <input type="text" name="" id="" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="row">
-                                                                    <label for="" class="col-12">Name</label>
-                                                                    <div class="col-12">
-                                                                        <input type="text" name="" id="" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-2">
-                                                            <div class="col-6">
-                                                                <div class="row">
-                                                                    <label for="" class="col-12">Name</label>
-                                                                    <div class="col-12">
-                                                                        <input type="text" name="" id="" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="row">
-                                                                    <label for="" class="col-12">Name</label>
-                                                                    <div class="col-12">
-                                                                        <input type="text" name="" id="" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-2">
-                                                            <lable for="" class="col-12 mb-2">Date created:</lable>
-                                                            <div class="col-12">
-                                                                <input type="date" name="published_date" id="DateCreated" class="form-control w-100 h-100 neumo-primary border-neumo"/>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-2">
-                                                            <lable for="" class="col-12 mb-2">Date created:</lable>
-                                                            <div class="col-12">
-                                                                <input type="date" name="published_date" id="DateCreated" class="form-control w-100 h-100 neumo-primary border-neumo"/>
-                                                            </div>
-                                                        </div>
+                            @foreach( $order as $item )
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $item->id }}</td>
+                                    <td>{{ $item->transaction_id }}</td>
+                                    <td>{{ $item->ship_email }}</td>
+                                    <td>{{ $item->ship_phone }}</td>
+                                    <td>
 
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 ">
-                                                    <h6 class="my-2">Shipping</h6>
-                                                    <div class="card card-body p-2 neumo-primary">
+                                        @if( $item->pay_method == 0 )
+                                            <span class="badge text-bg-primary">Bkash</span>
+                                        @elseif( $item->pay_method == 1 )
+                                            <span class="badge text-bg-primary">Rocket</span>
+                                        @elseif( $item->pay_method == 2 )
+                                            <span class="badge text-bg-primary">Nagad</span>
+                                        @else
+                                            <span class="badge text-bg-dark">Cash On</span>
+                                        @endif
 
-                                                        <div class="row mb-2">
-                                                            <div class="col-6">
-                                                                <div class="row">
-                                                                    <label for="" class="col-12">Name</label>
-                                                                    <div class="col-12">
-                                                                        <input type="text" name="" id="" class="form-control text-primary-size">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="row">
-                                                                    <label for="" class="col-12">Name</label>
-                                                                    <div class="col-12">
-                                                                        <input type="text" name="" id="" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-2">
-                                                            <div class="col-6">
-                                                                <div class="row">
-                                                                    <label for="" class="col-12">Name</label>
-                                                                    <div class="col-12">
-                                                                        <input type="text" name="" id="" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="row">
-                                                                    <label for="" class="col-12">Name</label>
-                                                                    <div class="col-12">
-                                                                        <input type="text" name="" id="" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-2">
-                                                            <div class="col-6">
-                                                                <div class="row">
-                                                                    <label for="" class="col-12">Name</label>
-                                                                    <div class="col-12">
-                                                                        <input type="text" name="" id="" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="row">
-                                                                    <label for="" class="col-12">Name</label>
-                                                                    <div class="col-12">
-                                                                        <input type="text" name="" id="" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-2">
-                                                            <div class="col-6">
-                                                                <div class="row">
-                                                                    <label for="" class="col-12">Name</label>
-                                                                    <div class="col-12">
-                                                                        <input type="text" name="" id="" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="row">
-                                                                    <label for="" class="col-12">Name</label>
-                                                                    <div class="col-12">
-                                                                        <input type="text" name="" id="" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-2">
-                                                            <lable for="" class="col-12 mb-2">Date created:</lable>
-                                                            <div class="col-12">
-                                                                <input type="date" name="published_date" id="DateCreated" class="form-control w-100 h-100 neumo-primary border-neumo"/>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-2">
-                                                            <lable for="" class="col-12 mb-2">Date created:</lable>
-                                                            <div class="col-12">
-                                                                <input type="date" name="published_date" id="DateCreated" class="form-control w-100 h-100 neumo-primary border-neumo"/>
-                                                            </div>
-                                                        </div>
+                                    </td>
+                                    <td>{!!   $item->ship_method == 0 ? '<span class="badge text-bg-success">Home Delivery</span>': '<span class="badge text-bg-dark">Shop Delivery</span>' !!}</td>
+                                    <td>
+                                        @if( $item->status == 'Pending' )
+                                            <span class="badge text-bg-light">Pending</span>
+                                        @elseif( $item->status == 'Processing' )
+                                            <span class="badge text-bg-primary">Processing</span>
+                                        @elseif( $item->status == 'Completed' )
+                                            <span class="badge text-bg-success">Completed</span>
+                                        @else
+                                            <span class="badge text-bg-danger">Fail/Refunded</span>
+                                        @endif
+                                    </td>
+                                    <td>
 
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        @if( $item->order_status == 0 )
+                                            <span class="badge text-bg-light">Received</span>
+                                        @elseif( $item->order_status == 1 )
+                                            <span class="badge text-bg-primary">Processing</span>
+                                        @elseif( $item->order_status == 2 )
+                                            <span class="badge text-bg-success">Completed</span>
+                                        @else
+                                            <span class="badge text-bg-danger">Canceled</span>
+                                        @endif
+
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button class="btn btn-secondary btn-sm" type="button">
+                                                Action
+                                            </button>
+                                            <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <span class="visually-hidden">Toggle Dropdown</span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="{{ route('order.update', ['id' => $item->id]) }}">Update</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('order.delete', ['id' => $item->id]) }}">Delete</a></li>
+                                            </ul>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="card card-body accordion neumo-primary text-primary-size" id="accordionOrderCal">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header border-bottom border-1 border-light">
-                                        <button class="accordion-button px-0 bg-neumo text-neumo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                            Order Calculator
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse show  px-0" data-bs-parent="#accordionOrderCal">
-                                        <div class="accordion-body bg-neumo">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores consequuntur dolore ducimus earum facere, facilis fuga impedit inventore ipsa, iste labore maiores modi nam natus nostrum pariatur praesentium quae quidem rerum sed similique totam veniam. Numquam, quo, quod. Blanditiis delectus eaque iure minus molestiae nobis provident quae quidem sequi?
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card card-body accordion neumo-primary text-primary-size" id="accordionOrderAction">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header border-bottom border-1 border-light">
-                                        <button class="accordion-button px-0 bg-neumo text-neumo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                            Order Action
-                                        </button>
-                                    </h2>
-                                    <div id="collapseThree" class="accordion-collapse collapse show  px-0" data-bs-parent="#accordionOrderAction">
-                                        <div class="accordion-body bg-neumo">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consectetur cum eius esse excepturi fuga maiores nobis numquam, officiis quae quibusdam sunt. Accusantium adipisci aliquam amet animi consequatur cumque eius et eum harum illum magnam molestiae nemo nisi nobis, pariatur placeat praesentium quae, quidem quisquam quo quos repellat veritatis. Doloribus!
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="card card-body accordion neumo-primary text-primary-size" id="accordionOrderNote">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header border-bottom border-1 border-light">
-                                        <button class="accordion-button px-0 bg-neumo text-neumo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                                            Order Note
-                                        </button>
-                                    </h2>
-                                    <div id="collapseFour" class="accordion-collapse collapse show  px-0" data-bs-parent="#accordionOrderNote">
-                                        <div class="accordion-body bg-neumo">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consectetur cum eius esse excepturi fuga maiores nobis numquam, officiis quae quibusdam sunt. Accusantium adipisci aliquam amet animi consequatur cumque eius et eum harum illum magnam molestiae nemo nisi nobis, pariatur placeat praesentium quae, quidem quisquam quo quos repellat veritatis. Doloribus!
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, quidem!
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dignissimos dolorum fuga hic nam necessitatibus neque perferendis sapiente veritatis voluptatibus.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                                    </td>
+                                </tr>
+                            @endforeach
+
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th>SL/NO</th>
+                            <th>Order No</th>
+                            <th>TxId</th>
+                            <th>Shipping Email</th>
+                            <th>Shipping Phone</th>
+                            <th>Pay Method</th>
+                            <th>Shipping Method</th>
+                            <th>Action</th>
+                        </tr>
+                        </tfoot>
+                    </table>
                 </div>
             </div>
         </div>
@@ -451,10 +272,14 @@
 @section('app-scripts')
     <script type="text/javascript">
 
-        $("#DateCreated").flatpickr({
-            minDate: "today",
-            defaultDate: ['today'],
-            dateFormat: "Y-m-d",
+        $(document).ready(function () {
+            let table = $('#example').DataTable({
+
+                buttons:['copy', 'csv', 'excel', 'pdf', 'print']
+
+            });
+
+            table.buttons().container().appendTo('#example_wrapper .col-md-6:eq(0)');
         });
 
     </script>

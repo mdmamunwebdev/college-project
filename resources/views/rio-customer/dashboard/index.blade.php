@@ -15,7 +15,17 @@
         </div>
     </div>
 
-    <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+            </div>
+            <div class="col-md-6">
+
+            </div>
+        </div>
+    </div>
 
     <h2>Section title</h2>
     <div class="table-responsive small">
