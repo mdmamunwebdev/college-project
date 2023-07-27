@@ -37,6 +37,10 @@ return new class extends Migration
 
             $table->date('order_create_date')->nullable();
             $table->date('tran_date')->nullable();
+            $table->bigInteger('subtotal')->nullable();
+            $table->double('shipping_fees')->default(0);
+            $table->text('coupon')->nullable();
+            $table->double('coupon_discount')->default(0);
             $table->string('card_issuer')->default('cash on');
             $table->string('card_brand')->default('cash on');
             $table->double('amount')->nullable();

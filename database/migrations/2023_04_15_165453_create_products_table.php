@@ -21,12 +21,12 @@ return new class extends Migration
             $table->tinyInteger('visibility');
             $table->date('published_date');
             $table->tinyInteger('condition');
-            $table->string('weight')->nullable();
-            $table->string('length')->nullable();
-            $table->string('height')->nullable();
-            $table->string('width')->nullable();
-            $table->string('regular_price');
-            $table->string('sale_price')->nullable();
+            $table->double('weight')->nullable();
+            $table->double('length')->nullable();
+            $table->double('height')->nullable();
+            $table->double('width')->nullable();
+            $table->double('regular_price');
+            $table->double('sale_price')->nullable();
             $table->date('start_sale_price_date')->nullable();
             $table->date('end_sale_price_date')->nullable();
             $table->timestamps();

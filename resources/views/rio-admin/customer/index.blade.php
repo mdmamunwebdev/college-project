@@ -1,7 +1,7 @@
 @extends('rio-admin.master')
 
 @section('title')
-    Order || List
+    Customer || List
 @endsection
 
 @section('sidebar-links')
@@ -84,7 +84,7 @@
                 </li> <!-- When active This link, then here is added a class (active-item) -->
             </ul>
         </li>
-        <li class="with-submenu"> <!-- When active This link, then here is added a class (showMenu) -->
+        <li class="with-submenu showMenu"> <!-- When active This link, then here is added a class (showMenu) -->
             <div class="iocn-link">
                 <a href="#">
                     <i class="bi bi-person-badge"></i>
@@ -93,10 +93,10 @@
                 <i class='bx bxs-chevron-down arrow'></i>
             </div>
             <ul class="sub-menu">
-                <li class="ln"><span class="link_name">Category</span></li>
-                <li class="d-flex justify-content-start p-0">
+                <li class="ln"><span class="link_name">Customer</span></li>
+                <li class="active-item d-flex justify-content-start p-0">
                     <i class='bx bx-list-plus' ></i>
-                    <a href="{{ route('category') }}">Category</a>
+                    <a href="{{ route('customer.list') }}">Customer</a>
                 </li> <!-- When active This link, then here is added a class (active-item) -->
             </ul>
         </li>
@@ -185,68 +185,68 @@
                         </thead>
                         <tbody>
 
-                            @foreach( $order as $item )
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->id }}</td>
-                                    <td>{{ $item->transaction_id }}</td>
-                                    <td>{{ $item->ship_email }}</td>
-                                    <td>{{ $item->ship_phone }}</td>
-                                    <td>
+                        @foreach( $order as $item )
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $item->id }}</td>
+                                <td>{{ $item->transaction_id }}</td>
+                                <td>{{ $item->ship_email }}</td>
+                                <td>{{ $item->ship_phone }}</td>
+                                <td>
 
-                                        @if( $item->pay_method == 0 )
-                                            <span class="badge text-bg-primary">Bkash</span>
-                                        @elseif( $item->pay_method == 1 )
-                                            <span class="badge text-bg-primary">Rocket</span>
-                                        @elseif( $item->pay_method == 2 )
-                                            <span class="badge text-bg-primary">Nagad</span>
-                                        @else
-                                            <span class="badge text-bg-dark">Cash On</span>
-                                        @endif
+                                    @if( $item->pay_method == 0 )
+                                        <span class="badge text-bg-primary">Bkash</span>
+                                    @elseif( $item->pay_method == 1 )
+                                        <span class="badge text-bg-primary">Rocket</span>
+                                    @elseif( $item->pay_method == 2 )
+                                        <span class="badge text-bg-primary">Nagad</span>
+                                    @else
+                                        <span class="badge text-bg-dark">Cash On</span>
+                                    @endif
 
-                                    </td>
-                                    <td>{!!   $item->ship_method == 0 ? '<span class="badge text-bg-success">Home Delivery</span>': '<span class="badge text-bg-dark">Shop Delivery</span>' !!}</td>
-                                    <td>
-                                        @if( $item->status == 'Pending' )
-                                            <span class="badge text-bg-light">Pending</span>
-                                        @elseif( $item->status == 'Processing' )
-                                            <span class="badge text-bg-primary">Processing</span>
-                                        @elseif( $item->status == 'Completed' )
-                                            <span class="badge text-bg-success">Completed</span>
-                                        @else
-                                            <span class="badge text-bg-danger">Fail/Refunded</span>
-                                        @endif
-                                    </td>
-                                    <td>
+                                </td>
+                                <td>{!!   $item->ship_method == 0 ? '<span class="badge text-bg-success">Home Delivery</span>': '<span class="badge text-bg-dark">Shop Delivery</span>' !!}</td>
+                                <td>
+                                    @if( $item->status == 'Pending' )
+                                        <span class="badge text-bg-light">Pending</span>
+                                    @elseif( $item->status == 'Processing' )
+                                        <span class="badge text-bg-primary">Processing</span>
+                                    @elseif( $item->status == 'Completed' )
+                                        <span class="badge text-bg-success">Completed</span>
+                                    @else
+                                        <span class="badge text-bg-danger">Fail/Refunded</span>
+                                    @endif
+                                </td>
+                                <td>
 
-                                        @if( $item->order_status == 0 )
-                                            <span class="badge text-bg-light">Received</span>
-                                        @elseif( $item->order_status == 1 )
-                                            <span class="badge text-bg-primary">Processing</span>
-                                        @elseif( $item->order_status == 2 )
-                                            <span class="badge text-bg-success">Completed</span>
-                                        @else
-                                            <span class="badge text-bg-danger">Canceled</span>
-                                        @endif
+                                    @if( $item->order_status == 0 )
+                                        <span class="badge text-bg-light">Received</span>
+                                    @elseif( $item->order_status == 1 )
+                                        <span class="badge text-bg-primary">Processing</span>
+                                    @elseif( $item->order_status == 2 )
+                                        <span class="badge text-bg-success">Completed</span>
+                                    @else
+                                        <span class="badge text-bg-danger">Canceled</span>
+                                    @endif
 
-                                    </td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button class="btn btn-secondary btn-sm" type="button">
-                                                Action
-                                            </button>
-                                            <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <span class="visually-hidden">Toggle Dropdown</span>
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="{{ route('order.update', ['id' => $item->id]) }}">Update</a></li>
-                                                <li><a class="dropdown-item" href="{{ route('order.delete', ['id' => $item->id]) }}">Delete</a></li>
-                                            </ul>
-                                        </div>
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-secondary btn-sm" type="button">
+                                            Action
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="visually-hidden">Toggle Dropdown</span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="{{ route('order.update', ['id' => $item->id]) }}">Update</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('order.delete', ['id' => $item->id]) }}">Delete</a></li>
+                                        </ul>
+                                    </div>
 
-                                    </td>
-                                </tr>
-                            @endforeach
+                                </td>
+                            </tr>
+                        @endforeach
 
                         </tbody>
                         <tfoot>

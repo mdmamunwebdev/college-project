@@ -17,8 +17,8 @@ return new class extends Migration
             $table->tinyInteger('product_id');
             $table->tinyInteger('category_id');
             $table->bigInteger('product_qty');
-            $table->bigInteger('sale_price');
-            $table->bigInteger('total_price');
+            $table->double('sale_price');
+            $table->double('total_price');
             $table->ipAddress('user_ip');
             $table->timestamps();
         });

@@ -18,6 +18,7 @@ use App\Http\Controllers\rioAdmin\OrderController;
 use App\Http\Controllers\TagController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes Start
@@ -122,14 +123,31 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/order/create', [OrderController::class, 'create'])->name('order.create');
 
     Route::get('/order/update/{id}', [OrderController::class, 'orderUpdateForm'])->name('order.update');
-    Route::post('/order/update/{id}', [OrderController::class, 'update'])->name('order.update');
+    Route::post('/order/update/{id}', [OrderController::class, 'orderUpdate'])->name('order.update');
 
     Route::post('/order/delete/{id}', [OrderController::class, 'delete'])->name('order.delete');
     Route::post('/order/status/{id}', [OrderController::class, 'status'])->name('order.status');
     /**************************************** Order Routes End *****************************************/
 
-    Route::get('/order/category/{id}', [OrderController::class, 'productSearch'])->name('order.category');
-    Route::get('/order/product-add', [OrderController::class, 'productAdd'])->name('order.product-add');
+    Route::get('/order/product/category/{cat_id}/{order_id}', [OrderController::class, 'productSearchByCat'])->name('order.product.category');
+    Route::get('/ordered/custom/product', [OrderController::class, 'customOrderedProduct'])->name('ordered.custom.product');
+    Route::get('/ordered/product/qty-update/{ordered_product_id}/{product_qty}', [OrderController::class, 'productQtyUpdate'])->name('ordered.product.qty-update');
+    Route::get('/ordered/product/delete/{ordered_product_id}/{order_id}', [OrderController::class, 'orderedProductDel'])->name('ordered.product.delete');
+
+    /**************************************** Customer Routes *****************************************/
+    Route::get('/customer/list', [CustomerController::class, 'index'])->name('customer.list');
+    Route::get('/customer/detail/{id}', [CustomerController::class, 'detail'])->name('customer.detail');
+
+    Route::get('/customer/create', [CustomerController::class, 'customerCreateForm'])->name('customer.create');
+    Route::post('/customer/create', [CustomerController::class, 'create'])->name('customer.create');
+
+    Route::get('/customer/update/{id}', [CustomerController::class, 'customerUpdateForm'])->name('customer.update');
+    Route::post('/customer/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
+
+    Route::post('/customer/delete/{id}', [CustomerController::class, 'delete'])->name('customer.delete');
+    Route::post('/customer/status/{id}', [CustomerController::class, 'status'])->name('customer.status');
+    /**************************************** Customer Routes End *****************************************/
+
 
 
 

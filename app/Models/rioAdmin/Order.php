@@ -51,8 +51,12 @@ class Order extends Model
             self::$order->ship_address2  = $req->ship_address2;
         }
 
-//        self::$order->order_create_date  = '';
+        self::$order->order_create_date  = date('Y-m-d');
 //        self::$order->tran_date  = '';
+        self::$order->subtotal        = $req->subtotal;
+        self::$order->coupon          = $req->coupon;
+        self::$order->coupon_discount = $req->coupon_discount;
+        self::$order->shipping_fees   = $req->shipping_fees;
         self::$order->amount          = $req->amount;
         self::$order->status          = 'Pending';
         self::$order->pay_method      = $req->paymentMethod;

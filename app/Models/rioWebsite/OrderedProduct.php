@@ -11,7 +11,7 @@ class OrderedProduct extends Model
 {
     use HasFactory;
 
-    private static $product, $cart;
+    private static $product,$product_price, $cart;
 
     public static function orderedProduct($order, $req) {
 
@@ -25,12 +25,14 @@ class OrderedProduct extends Model
             self::$product->category_id = $item->category_id;
             self::$product->product_qty = $item->product_qty;
             self::$product->user_ip = $item->user_ip;
-            self::$product->sale_price = 20;
-            self::$product->total_price = 20;
-            //self::$product->cus_email = $order->email;
+
+            self::$product_price = Product::find($item->product_id); // Query for product sale price
+
+            self::$product->sale_price = self::$product_price->sale_price;
+            self::$product->total_price = ( self::$product_price->sale_price * $req->product_qty );
             self::$product->save();
 
-            Cart::where('id', $item->id)->delete();
+            Cart::find( $item->id )->delete();
         }
     }
 
@@ -42,9 +44,11 @@ class OrderedProduct extends Model
             self::$product->category_id = $req->category_id;
             self::$product->product_qty = $req->product_qty;
             self::$product->user_ip = 'custom_order';
-            self::$product->sale_price = 20;
-            self::$product->total_price = 20;
-            //self::$product->cus_email = $order->email;
+
+            self::$product_price = Product::find($req->product_id); // Query for product sale price
+
+            self::$product->sale_price = self::$product_price->sale_price;
+            self::$product->total_price = ( self::$product_price->sale_price * $req->product_qty );
             self::$product->save();
 
             return self::$product;

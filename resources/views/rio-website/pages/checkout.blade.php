@@ -138,8 +138,12 @@
                                                                         </svg>
                                                                     </button>
                                                                 </div>
-                                                                <label class="price small">{{ $item->product->sale_price * $item->product_qty  }}$</label>
-                                                                <div class="visually-hidden"> {{  $total  +=  $item->product->sale_price * $item->product_qty }} </div>
+
+                                                                @php
+                                                                    $sub_total  +=  $item->product->sale_price * $item->product_qty
+                                                                @endphp
+
+                                                                <label class="price small">{{ $item->product->sale_price * $item->product_qty }}&dollar;</label>
                                                             </div>
                                                         @endif
                                                     @endforeach
@@ -159,14 +163,17 @@
                                     <label class="title">Checkout</label>
                                     <div class="details">
                                         <span>Your cart subtotal:</span>
-                                        <span>{{ $total }}$</span>
+                                        <span>{{ $sub_total }}&dollar;</span>
                                         <span>Discount through applied coupons:</span>
                                         <span>3.99$</span>
                                         <span>Shipping fees:</span>
                                         <span>4.99$</span>
                                     </div>
                                     <div class="checkout--footer">
-                                        <label class="price"><sup>$</sup>{{ $total += (4.99) - (3.99) }}</label>
+                                        @php
+                                            $total =  ($sub_total + ((4.99) - (3.99)))
+                                        @endphp
+                                        <label class="price"><sup>$</sup>{{ $total }}</label>
                                         <div  class="btn">Total (USD)</div>
                                     </div>
                                 </div>
@@ -187,6 +194,10 @@
                         @csrf
 
                         <input type="hidden" class="form-control" id='amount' name="amount" placeholder="" value="{{  $total }}" required/>
+                        <input type="hidden" class="form-control" id='subtotal' name="subtotal" placeholder="" value="{{  $sub_total }}" required/>
+                        <input type="hidden" class="form-control" id='coupon' name="coupon" placeholder="" value="{{ 0 }}" required/>
+                        <input type="hidden" class="form-control" id='coupon_discount' name="coupon_discount" placeholder="" value="{{ 3.99 }}" required/>
+                        <input type="hidden" class="form-control" id='shipping_fees' name="shipping_fees" placeholder="" value="{{ 4.99 }}" required/>
 
                         <div class="row g-3">
                             <div class="col-sm-6">

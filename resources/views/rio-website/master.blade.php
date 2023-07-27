@@ -126,8 +126,10 @@
                                                             </svg>
                                                         </button>
                                                     </div>
+                                                    @php
+                                                        $sub_total  +=  $item->product->sale_price * $item->product_qty
+                                                    @endphp
                                                     <label class="price small">{{ $item->product->sale_price * $item->product_qty  }}$</label>
-                                                    <div class="visually-hidden"> {{  $total  +=  $item->product->sale_price * $item->product_qty }} </div>
                                                 </div>
                                             @endif
                                         @endforeach
@@ -154,14 +156,17 @@
                         <label class="title">Checkout</label>
                         <div class="details">
                             <span>Your cart subtotal:</span>
-                            <span>{{ $total }}$</span>
+                            <span>{{ $sub_total }}$</span>
                             <span>Discount through applied coupons:</span>
                             <span>3.99$</span>
                             <span>Shipping fees:</span>
                             <span>4.99$</span>
                         </div>
                         <div class="checkout--footer">
-                            <label class="price"><sup>$</sup>{{  $total += (4.99) - (3.99) }}</label>
+                            @php
+                                $total = ($sub_total + ((4.99) - (3.99)))
+                            @endphp
+                            <label class="price"><sup>$</sup>{{  $total  }}</label>
                             <a href="{{ route('checkout') }}"  class="checkout-btn">Checkout</a>
                         </div>
                     </div>
@@ -186,66 +191,6 @@
 
 <!-- Main JS File -->
 <script src="{{ asset('/') }}rio-website/assets/js/main.js"></script>
-
-<script type="text/javascript">
-    var TxtType = function(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-    };
-
-    TxtType.prototype.tick = function() {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
-
-        if (this.isDeleting) {
-            this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-            this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
-
-        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-        var that = this;
-        var delta = 200 - Math.random() * 100;
-
-        if (this.isDeleting) { delta /= 2; }
-
-        if (!this.isDeleting && this.txt === fullTxt) {
-            delta = this.period;
-            this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-            this.isDeleting = false;
-            this.loopNum++;
-            delta = 500;
-        }
-
-        setTimeout(function() {
-            that.tick();
-        }, delta);
-    };
-
-    window.onload = function() {
-        var elements = document.getElementsByClassName('typewrite');
-        for (var i=0; i<elements.length; i++) {
-            var toRotate = elements[i].getAttribute('data-type');
-            var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-                new TxtType(elements[i], JSON.parse(toRotate), period);
-            }
-        }
-        // INJECT CSS
-        var css = document.createElement("style");
-        css.type = "text/css";
-        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-        document.body.appendChild(css);
-    };
-
-</script>
 
 @yield('script')
 

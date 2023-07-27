@@ -22,6 +22,7 @@ class AppServiceProvider extends ServiceProvider
         // Using view composer to set following variables globally
         view()->composer('*',function($view) {
             $view->with('total', 0);
+            $view->with('sub_total', 0);
         });
     }
 }
